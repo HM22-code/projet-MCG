@@ -31,20 +31,14 @@ Utilisez un git pour réaliser votre projet.
 ## échéanciers du projet
 
 - Pour le 18 mars : composition des groupes du projet
-- Pour le 27 mars : retour du Game Design Document
-- Pour le XX : soutenance avec diaporama :
+- Pour le 27 mars : dépôt du Game Design Document
+- Pour le 6 mai : séance de béta-test, retour sur :
+  - respect des consignes
+  - jouabilité du Jeu
+  - sentiment
+- Pour le 11 mai : diaporama présentant :
   - le cahier des charges
   - les éléments du Game Design Document
   - L'organisation du développement (liste des tâches, répartition)
   - les problèmes rencontrés
-
-
-
-## membres du groupe
-
-1.
-2.
-3.
-4.
-5.
-6.
+- Pour le 12 mai : soutenance
