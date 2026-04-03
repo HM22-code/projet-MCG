@@ -55,7 +55,7 @@ func _unhandled_input(event):
 		_rotation_input = -event.relative.x * MOUSE_SENSITIVITY
 		_tilt_input = -event.relative.y * MOUSE_SENSITIVITY
 		transform.basis = transform.basis.rotated(Vector3(0,1,0), _rotation_input)
-		print(Vector2(_rotation_input,_tilt_input))
+		#print(Vector2(_rotation_input,_tilt_input))
 
 @export var TILT_LOWER_LIMIT := deg_to_rad(-90.0)
 @export var TILT_UPPER_LIMIT := deg_to_rad(90.0)
