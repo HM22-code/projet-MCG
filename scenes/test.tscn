@@ -1,0 +1,78 @@
+[gd_scene load_steps=13 format=3 uid="uid://b8alu43mmpxms"]
+
+[ext_resource type="PackedScene" uid="uid://bayi1q2r2ond4" path="res://entities/zombie/zombie.tscn" id="1_iyx0m"]
+[ext_resource type="PackedScene" uid="uid://b5hm2qiq84uxs" path="res://entities/player/player.tscn" id="2_74lek"]
+[ext_resource type="PackedScene" uid="uid://bsfcuyov1kqm7" path="res://menus/pause_menu/pause_menu.tscn" id="3_j5jx5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mf4mk"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_37kl0"]
+sky_material = SubResource("ProceduralSkyMaterial_mf4mk")
+
+[sub_resource type="Environment" id="Environment_8uh7m"]
+background_mode = 2
+sky = SubResource("Sky_37kl0")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_8uh7m"]
+vertices = PackedVector3Array(-99.5, 0.5, -44.5, -59, 0.5, -44.5, -59, 0.5, -45.25, -57.75, 0.5, -45.75, -57.75, 0.5, -99.5, -99.5, 0.5, -99.5, -57.25, 0.5, -45.75, 2.75, 0.5, -45.25, 3.75, 0.5, -45.75, 3.75, 0.5, -99.5, -56.75, 0.5, -44.75, 2.75, 0.5, -44.75, 4.25, 0.5, -45.75, 5, 0.5, -44.5, 99.5, 0.5, -44.5, 99.5, 0.5, -99.5, 3, 0.5, -15.5, 3.75, 0.5, -15.5, 3.75, 0.5, -43.5, 2.75, 0.5, -43.75, -56.75, 0.5, -44, -57.5, 0.5, -43.5, 2.75, 0.5, -15, -1, 0.5, -6.5, 0.75, 0.5, -6.75, 2.75, 0.5, -14, -1, 0.5, -4.75, -58.75, 0.5, -43.5, -99.5, 0.5, 99.5, 0.25, 0.5, 99.5, 0.25, 0.5, -4.5, 4.5, 0.5, -15.5, 4.5, 0.5, -43.5, 5, 0.5, -14.5, 99.5, 0.5, -14.5, 3.25, 0.5, -13.25, 1.25, 0.5, -6.25, 4.25, 0.5, -13.25, 99.5, 0.5, -6, 1.25, 0.5, -4.75, 99.5, 0.5, 99.5)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 4), PackedInt32Array(4, 0, 5), PackedInt32Array(6, 3, 4), PackedInt32Array(8, 7, 9), PackedInt32Array(9, 7, 10), PackedInt32Array(9, 10, 6), PackedInt32Array(9, 6, 4), PackedInt32Array(7, 11, 10), PackedInt32Array(12, 8, 9), PackedInt32Array(12, 9, 13), PackedInt32Array(13, 9, 14), PackedInt32Array(14, 9, 15), PackedInt32Array(18, 17, 16), PackedInt32Array(16, 22, 18), PackedInt32Array(18, 22, 19), PackedInt32Array(19, 22, 20), PackedInt32Array(20, 22, 21), PackedInt32Array(10, 11, 20), PackedInt32Array(20, 11, 19), PackedInt32Array(25, 24, 22), PackedInt32Array(22, 24, 23), PackedInt32Array(22, 23, 21), PackedInt32Array(27, 26, 0), PackedInt32Array(0, 26, 29), PackedInt32Array(0, 29, 28), PackedInt32Array(0, 1, 27), PackedInt32Array(29, 26, 30), PackedInt32Array(21, 23, 27), PackedInt32Array(27, 23, 26), PackedInt32Array(32, 31, 18), PackedInt32Array(18, 31, 17), PackedInt32Array(32, 13, 31), PackedInt32Array(31, 13, 33), PackedInt32Array(33, 13, 14), PackedInt32Array(33, 14, 34), PackedInt32Array(24, 25, 35), PackedInt32Array(24, 35, 36), PackedInt32Array(36, 35, 37), PackedInt32Array(37, 33, 36), PackedInt32Array(36, 33, 34), PackedInt32Array(36, 34, 38), PackedInt32Array(39, 36, 38), PackedInt32Array(39, 38, 30), PackedInt32Array(30, 38, 29), PackedInt32Array(29, 38, 40)]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_37kl0"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8uh7m"]
+material = SubResource("StandardMaterial3D_37kl0")
+size = Vector2(20, 20)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_37kl0"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_37kl0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8uh7m"]
+
+[node name="test" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.90122104, -0.43327293, -0.008668768, 0.01733765, -0.056036033, 0.9982782, -0.4330127, 0.8995191, 0.058012787, 0, 4, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8uh7m")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_8uh7m")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/StaticBody3D"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_8uh7m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_37kl0")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8594856, -5.62793)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/RigidBody3D"]
+mesh = SubResource("BoxMesh_37kl0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/RigidBody3D"]
+shape = SubResource("BoxShape3D_8uh7m")
+
+[node name="Zombie" parent="NavigationRegion3D" instance=ExtResource("1_iyx0m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7552066, 1.0715919, -14.450264)
+
+[node name="Zombie2" parent="NavigationRegion3D" instance=ExtResource("1_iyx0m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7552066, 1.0715919, -44.55496)
+
+[node name="Zombie3" parent="NavigationRegion3D" instance=ExtResource("1_iyx0m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.93903, 1.0715919, -44.55496)
+
+[node name="player" parent="." instance=ExtResource("2_74lek")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0209244, 0)
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_j5jx5")]

@@ -1,12 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5hm2qiq84uxs"]
+[gd_scene load_steps=5 format=3 uid="uid://b5hm2qiq84uxs"]
 
-[ext_resource type="Script" uid="uid://ddvtrssy83qnk" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://ddvtrssy83qnk" path="res://entities/player/player.gd" id="1_4flbx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_symyc"]
+albedo_color = Color(0, 0, 1, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
+material = SubResource("StandardMaterial3D_symyc")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4flbx"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("CAMERA_CONTROLLER")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("CAMERA_CONTROLLER")]
 script = ExtResource("1_4flbx")
 CAMERA_CONTROLLER = NodePath("Camera3D")
 
