@@ -25,9 +25,9 @@ polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(2, 0, 3), PackedInt32Arr
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_8uh7m"]
 material = SubResource("StandardMaterial3D_37kl0")
-size = Vector2(20, 20)
+size = Vector2(200, 200)
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_37kl0"]
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_iyx0m"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_37kl0"]
 
@@ -48,11 +48,10 @@ navigation_mesh = SubResource("NavigationMesh_8uh7m")
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/StaticBody3D"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 mesh = SubResource("PlaneMesh_8uh7m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StaticBody3D"]
-shape = SubResource("WorldBoundaryShape3D_37kl0")
+shape = SubResource("WorldBoundaryShape3D_iyx0m")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8594856, -5.62793)
