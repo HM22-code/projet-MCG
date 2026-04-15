@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Projet-MCG"
-run/main_scene="uid://b8alu43mmpxms"
+run/main_scene="uid://b23ft8yqe4ys1"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameData="*res://menus/main_menu/game_data.gd"
 
 [input]
 
