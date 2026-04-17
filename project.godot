@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 GameData="*res://menus/main_menu/game_data.gd"
 
+[dotnet]
+
+project/assembly_name="Projet-MCG"
+
 [input]
 
 ui_left={
