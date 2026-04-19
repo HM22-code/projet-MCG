@@ -19,16 +19,23 @@ var wander_timer    : float = 0.0
 var wander_wait     : float = 0.0
 var is_waiting      : bool  = true   # commence par attendre avant de se balader
 
-@onready var player    : Node3D            = get_node("/root/test/player")
+
+
 @onready var nav_agent : NavigationAgent3D = $NavigationAgent3D
+@onready var player: CharacterBody3D = get_tree().get_first_node_in_group("player")
 
 # fonctions moteurs
 
 func _ready() -> void:
+	await get_tree().process_frame  # attend le process de chaque noeud
+	player = get_tree().get_first_node_in_group("player")
 	wander_origin = global_position
-	_pick_wander_wait()         # attendre avant balade
+	_pick_wander_wait()  # attendre avant balade
 
 func _physics_process(delta: float) -> void:
+	# en action si le noeud player est présent
+	if not is_instance_valid(player):
+		return
 	_update_state()
 	_execute_state(delta)
 	move_and_slide()

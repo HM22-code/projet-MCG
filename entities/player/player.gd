@@ -25,6 +25,7 @@ func _physics_process(delta: float) -> void:
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	add_to_group("player")
 
 var _mouse_input : bool = false
 var _mouse_rotation : Vector3
