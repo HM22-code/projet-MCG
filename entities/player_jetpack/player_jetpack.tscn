@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://4pwi03f2rj7y"]
+
+[ext_resource type="Script" uid="uid://r4ictp6jr543" path="res://entities/player_jetpack/player_jetpack.gd" id="1_kpfu8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_symyc"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
+material = SubResource("StandardMaterial3D_symyc")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4flbx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8n0i1"]
+size = Vector3(0.5, 0.4, 0.4)
+
+[sub_resource type="Gradient" id="Gradient_kpfu8"]
+offsets = PackedFloat32Array(0.5645161, 0.86290324, 1)
+colors = PackedColorArray(1, 0.4509804, 0, 1, 1, 0.8156863, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8n0i1"]
+gradient = SubResource("Gradient_kpfu8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3p34x"]
+emission_shape_scale = Vector3(0.2, 0.2, 0.2)
+emission_shape = 1
+emission_sphere_radius = 1.0
+inherit_velocity_ratio = 0.3
+direction = Vector3(0, -1, 0)
+scale_min = 0.099999994
+scale_max = 0.29999998
+color_ramp = SubResource("GradientTexture1D_8n0i1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kpfu8"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_8n0i1"]
+material = SubResource("StandardMaterial3D_kpfu8")
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_kpfu8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_sh265")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_4flbx")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 1, 2)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera3D"]
+
+[node name="ProgressBar" type="ProgressBar" parent="Camera3D/CanvasLayer"]
+offset_right = 226.0
+offset_bottom = 27.0
+show_percentage = false
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46770638, 0.66237617)
+mesh = SubResource("BoxMesh_8n0i1")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="MeshInstance3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.18615115, -0.0038428307)
+emitting = false
+amount = 15
+lifetime = 0.33
+process_material = SubResource("ParticleProcessMaterial_3p34x")
+draw_pass_1 = SubResource("SphereMesh_8n0i1")
