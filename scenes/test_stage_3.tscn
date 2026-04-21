@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bmxwp8wg55vwf"]
+[gd_scene load_steps=10 format=3 uid="uid://bmxwp8wg55vwf"]
 
 [ext_resource type="MeshLibrary" uid="uid://nvoelvh0tl4s" path="res://mesh_library/mesh_library_stage_3.tres" id="1_x74nj"]
 [ext_resource type="PackedScene" uid="uid://bayi1q2r2ond4" path="res://entities/zombie/zombie.tscn" id="2_g865m"]
+[ext_resource type="PackedScene" uid="uid://dgsvh3gdhngt2" path="res://entities/food/food.tscn" id="3_g865m"]
 [ext_resource type="PackedScene" uid="uid://4pwi03f2rj7y" path="res://entities/player_jetpack/player_jetpack.tscn" id="3_sh02n"]
 [ext_resource type="PackedScene" uid="uid://bsfcuyov1kqm7" path="res://menus/pause_menu/pause_menu.tscn" id="4_cxkfx"]
 
@@ -53,6 +54,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.064034, 1.0715919, -89.27
 
 [node name="Zombie4" parent="NavigationRegion3D" instance=ExtResource("2_g865m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.801426, 23.378386, -52.402992)
+
+[node name="food" parent="NavigationRegion3D" instance=ExtResource("3_g865m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.169, 1.067, -7)
+
+[node name="food2" parent="NavigationRegion3D" instance=ExtResource("3_g865m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.169, 1.067, -10)
+
+[node name="food3" parent="NavigationRegion3D" instance=ExtResource("3_g865m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.169, 1.067, -13)
+
+[node name="food4" parent="NavigationRegion3D" instance=ExtResource("3_g865m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.321335, 24.302086, -30.37569)
 
 [node name="Player" parent="." instance=ExtResource("3_sh02n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0300417, 0)

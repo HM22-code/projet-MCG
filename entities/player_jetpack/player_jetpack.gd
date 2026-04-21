@@ -10,8 +10,9 @@ const JETPACK_FUEL_REGEN = 10.0
 var jetpack_fuel = 100.0
 var jetpack_active = false
 
-@onready var progress_bar: ProgressBar = $Camera3D/CanvasLayer/ProgressBar
+@onready var progress_bar: ProgressBar = $Camera3D/CanvasLayer/FuelProgressBar
 @onready var gpu_particles_3d: GPUParticles3D = $MeshInstance3D2/GPUParticles3D
+@onready var score_label: Label = $Camera3D/CanvasLayer/ScoreLabel
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -40,7 +41,9 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		jetpack_fuel += JETPACK_FUEL_REGEN * delta
 		jetpack_fuel = min(jetpack_fuel, JETPACK_FUEL_MAX)
+	# Mise à jour affichage pour le joueur
 	update_fuel_bar()
+	update_score_label()
 	# Saut
 	if Input.is_action_just_pressed("saut") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -72,6 +75,11 @@ func update_fuel_bar():
 			style.bg_color = Color.ORANGE
 		else:
 			style.bg_color = Color.RED
+
+## Mise à jour affichage score
+func update_score_label():
+		score_label.text = "Score : " + str(GameData.get_score())
+
 
 # fonctions mouvement caméra à la souris
 

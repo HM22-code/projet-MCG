@@ -3,10 +3,14 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
+@onready var score_label: Label = $Camera3D/CanvasLayer/ScoreLabel
+
 func _physics_process(delta: float) -> void:
 	# Gravité
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	# Mise à jour affichage pour le joueur
+	update_score_label()
 	# Saut
 	if Input.is_action_just_pressed("saut") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -20,6 +24,12 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	move_and_slide()
+
+
+## Mise à jour affichage score
+func update_score_label():
+		score_label.text = "Score : " + str(GameData.get_score())
+
 
 # fonctions mouvement caméra à la souris
 
