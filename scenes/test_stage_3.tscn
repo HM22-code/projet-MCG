@@ -64,6 +64,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.169, 1.067, -10)
 [node name="food3" parent="NavigationRegion3D" instance=ExtResource("3_g865m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.169, 1.067, -13)
 
+[node name="food4" parent="NavigationRegion3D" instance=ExtResource("3_g865m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.321335, 24.302086, -30.37569)
+
 [node name="Player" parent="." instance=ExtResource("3_sh02n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0300417, 0)
 
