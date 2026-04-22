@@ -8,6 +8,7 @@ var volume_musique: int = 100 #volume musique ambiance
 var volume_effets: int = 100
 var sensibilite: float = 1 #sensibilité du déplacement de la caméra
 #Multiplié avec le déplacement, default = 1
+var luminosite: int = 100
 
 
 func _ready():
@@ -19,6 +20,7 @@ func save_data():
 	config.set_value("preferences", "musique_ambiance", volume_musique)
 	config.set_value("preferences", "effets_sonores", volume_effets)
 	config.set_value("preferences", "sensibilite_deplacement", sensibilite)
+	config.set_value("preferences", "luminosite", luminosite)
 	config.save(SAVE_PATH)
 
 func load_data():
@@ -28,7 +30,7 @@ func load_data():
 		volume_musique = config.get_value("preferences", "musique_ambiance", 100)
 		volume_effets = config.get_value("preferences", "effets_sonores", 100)
 		sensibilite = config.get_value("preferences", "sensibilite_deplacement", 1)
-		
+		luminosite = config.get_value("preferences", "luminosite", 100)
 
 func submit_score(score: int):
 	if score > best_score:
@@ -48,4 +50,9 @@ func submit_effets_sonores(volume: int):
 func submit_sensibilite_deplacement(sensibilite_nouv: float):
 	if (sensibilite_nouv != sensibilite and 0 < sensibilite_nouv and sensibilite_nouv < 10):
 		sensibilite = sensibilite_nouv
+		save_data()
+
+func submit_luminosite(value: int):
+	if (value != luminosite and 0 <= value and value <= 100):
+		luminosite = value
 		save_data()
