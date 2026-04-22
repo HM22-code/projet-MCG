@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b23ft8yqe4ys1"]
+[gd_scene format=3 uid="uid://b23ft8yqe4ys1"]
 
 [ext_resource type="Script" uid="uid://dwsn0gp3032qr" path="res://menus/main_menu/main_menu.gd" id="1_xbn2l"]
 [ext_resource type="Texture2D" uid="uid://dywxdh0y7ls3e" path="res://menus/main_menu/S31N.png" id="2_vu5tu"]
@@ -10,7 +10,7 @@ diffuse_texture = ExtResource("2_vu5tu")
 [sub_resource type="LabelSettings" id="LabelSettings_8s8hf"]
 font_size = 80
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=1069593292]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,18 +19,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xbn2l")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1241731701]
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 texture = SubResource("CanvasTexture_ml8bw")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=1604296655]
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 
-[node name="TitleLabel" type="Label" parent="Panel"]
+[node name="TitleLabel" type="Label" parent="Panel" unique_id=378097136]
 layout_mode = 0
 offset_left = 48.0
 offset_top = 25.0
@@ -39,7 +39,7 @@ offset_bottom = 146.0
 text = "ZombieRU"
 label_settings = SubResource("LabelSettings_8s8hf")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1735948747]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 358.0
@@ -48,19 +48,19 @@ offset_bottom = 637.0
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="StartButton" type="Button" parent="Panel/VBoxContainer"]
+[node name="StartButton" type="Button" parent="Panel/VBoxContainer" unique_id=1815427067]
 layout_mode = 2
 text = "Jouer"
 
-[node name="OptionsButton" type="Button" parent="Panel/VBoxContainer"]
+[node name="OptionsButton" type="Button" parent="Panel/VBoxContainer" unique_id=1644442415]
 layout_mode = 2
 text = "Options"
 
-[node name="QuitButton" type="Button" parent="Panel/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="Panel/VBoxContainer" unique_id=781904749]
 layout_mode = 2
 text = "Quitter"
 
-[node name="BestScoreLabel" type="Label" parent="Panel"]
+[node name="BestScoreLabel" type="Label" parent="Panel" unique_id=1574326784]
 layout_mode = 0
 offset_left = 823.0
 offset_top = 64.0
@@ -68,7 +68,7 @@ offset_right = 946.0
 offset_bottom = 87.0
 text = "Meilleur score : "
 
-[node name="TestLevel" parent="." instance=ExtResource("3_ml8bw")]
+[node name="TestLevel" parent="." unique_id=996579425 instance=ExtResource("3_ml8bw")]
 layout_mode = 1
 offset_left = 817.0
 offset_top = 306.0
