@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://xnkkbvfp0bre"]
+[gd_scene load_steps=5 format=3 uid="uid://xnkkbvfp0bre"]
 
 [ext_resource type="Script" uid="uid://cm3e8vpn6476l" path="res://menus/options_menu/options_menu.gd" id="1_hs8o5"]
 [ext_resource type="Texture2D" uid="uid://dywxdh0y7ls3e" path="res://menus/main_menu/S31N.png" id="2_vu5tu"]
@@ -9,7 +9,7 @@ diffuse_texture = ExtResource("2_vu5tu")
 [sub_resource type="LabelSettings" id="LabelSettings_8s8hf"]
 font_size = 80
 
-[node name="OptionsMenu" type="Control" unique_id=922189116]
+[node name="OptionsMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,18 +18,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hs8o5")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=336984700]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 texture = SubResource("CanvasTexture_ml8bw")
 
-[node name="Panel" type="Panel" parent="." unique_id=2112351568]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 
-[node name="TitleLabel" type="Label" parent="Panel" unique_id=842600886]
+[node name="TitleLabel" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 48.0
 offset_top = 25.0
@@ -38,7 +38,7 @@ offset_bottom = 146.0
 text = "ZombieRU  -   Options "
 label_settings = SubResource("LabelSettings_8s8hf")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=40138276]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 169.0
@@ -47,72 +47,74 @@ offset_bottom = 635.0
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=837893966]
+[node name="HBoxContainer4" type="HBoxContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/HBoxContainer4" unique_id=1522397748]
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/HBoxContainer4"]
 layout_mode = 2
 theme_override_constants/margin_right = 100
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer4/MarginContainer" unique_id=1104459624]
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer4/MarginContainer"]
 layout_mode = 2
 text = "Luminosité"
 
-[node name="Luminosite" type="HSlider" parent="Panel/VBoxContainer/HBoxContainer4" unique_id=1005685341]
+[node name="Luminosite" type="HSlider" parent="Panel/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1030856229]
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
+theme_override_constants/margin_right = 45
 
-[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/HBoxContainer3" unique_id=1636168620]
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer3/MarginContainer"]
 layout_mode = 2
-theme_override_constants/margin_right = 20
+text = "Sensibilité caméra"
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer3/MarginContainer" unique_id=1671375415]
-layout_mode = 2
-text = "Sensibilité du deplacement de la caméra"
-
-[node name="Sensibilite" type="HSlider" parent="Panel/VBoxContainer/HBoxContainer3" unique_id=305389563]
+[node name="Sensibilite" type="HSlider" parent="Panel/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 3
 max_value = 10.0
 step = 0.1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=845738967]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/HBoxContainer" unique_id=2009955521]
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_right = 80
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/MarginContainer" unique_id=2029010434]
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Effets sonores"
 
-[node name="EffetsSonores" type="HSlider" parent="Panel/VBoxContainer/HBoxContainer" unique_id=88807089]
+[node name="EffetsSonores" type="HSlider" parent="Panel/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.0
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=745652593]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/HBoxContainer2" unique_id=140611052]
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_constants/margin_right = 30
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer2/MarginContainer" unique_id=1011221703]
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer2/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Musique d'ambiance
 "
 
-[node name="MusicAmbiance" type="HSlider" parent="Panel/VBoxContainer/HBoxContainer2" unique_id=493510866]
+[node name="MusicAmbiance" type="HSlider" parent="Panel/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="MainMenuButton" type="Button" parent="Panel/VBoxContainer" unique_id=828072355]
+[node name="MainMenuButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Menu Principal"

@@ -5,10 +5,9 @@ extends Node
 const SAVE_PATH = "user://save_game_data.cfg"
 var best_score: int = 0
 var score: int = 0
-var volume_musique: int = 100 #volume musique ambiance
+var volume_musique: int = 100 # volume musique ambiance
 var volume_effets: int = 100
-var sensibilite: float = 1 #sensibilité du déplacement de la caméra
-#Multiplié avec le déplacement, default = 1
+var sensibilite: float = 1 # déplacement de la caméra, multiplié avec le déplacement, default = 1
 var luminosite: int = 100
 
 func _ready():
@@ -51,22 +50,26 @@ func submit_score(final_score: int):
 	if final_score > best_score:
 		best_score = final_score
 		save_data()
-		
+
+## Sauvegarde niveau volume musique ambiante
 func submit_musique_ambiance(volume: int):
 	if (volume != volume_musique and 0 <= volume and volume <= 100):
 		volume_musique = volume
 		save_data()
 
+## Sauvegarde niveau volume effets sonores
 func submit_effets_sonores(volume: int):
 	if (volume !=  volume_effets and 0 <= volume and volume <= 100):
 		volume_effets = volume_effets
 		save_data()
-		
+
+## Sauvegarde sensibilité souris caméra
 func submit_sensibilite_deplacement(sensibilite_nouv: float):
 	if (sensibilite_nouv != sensibilite and 0 < sensibilite_nouv and sensibilite_nouv < 10):
 		sensibilite = sensibilite_nouv
 		save_data()
 
+## Sauvegarde niveau de luminosité
 func submit_luminosite(value: int):
 	if (value != luminosite and 0 <= value and value <= 100):
 		luminosite = value
