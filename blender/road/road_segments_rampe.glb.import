@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cqfu35jgvyjxx"
-path="res://.godot/imported/road_segments_rampe_simple_1.glb-bc10102da9d0362130b14caee1af4ea9.scn"
+uid="uid://mbnnpw8f7gxf"
+path="res://.godot/imported/road_segments_rampe.glb-5a50f0017e6c611453ac9c9b78509197.scn"
 
 [deps]
 
-source_file="res://blender/road_segments_rampe_simple_1.glb"
-dest_files=["res://.godot/imported/road_segments_rampe_simple_1.glb-bc10102da9d0362130b14caee1af4ea9.scn"]
+source_file="res://blender/road/road_segments_rampe.glb"
+dest_files=["res://.godot/imported/road_segments_rampe.glb-5a50f0017e6c611453ac9c9b78509197.scn"]
 
 [params]
 
@@ -39,14 +39,14 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "meshes": {
-"road_segments_rampe_simple_1_Cube_004": {
+"road_segments_rampe_Cube_009": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://blender/stage_1/road_segments_rampe_simple_1.res",
-"save_to_file/path": "uid://bhsjv4k6npjes"
+"save_to_file/fallback_path": "res://blender/stage_1/road_segments_rampe.res",
+"save_to_file/path": "uid://gfw1f6w74wb0"
 }
 }
 }

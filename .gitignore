@@ -4,3 +4,6 @@
 
 #*.import
 #*.res
+
+*.blend[2-9]
+.~

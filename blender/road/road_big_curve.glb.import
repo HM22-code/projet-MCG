@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c7lfdk7x64j57"
-path="res://.godot/imported/road_straight.glb-3f1ba597fc3cd0a7d26e5e70d6b22d31.scn"
+uid="uid://betd7n7lw7yrc"
+path="res://.godot/imported/road_big_curve.glb-47623220d828faf52fdbeda371ecd486.scn"
 
 [deps]
 
-source_file="res://blender/road_straight.glb"
-dest_files=["res://.godot/imported/road_straight.glb-3f1ba597fc3cd0a7d26e5e70d6b22d31.scn"]
+source_file="res://blender/road/road_big_curve.glb"
+dest_files=["res://.godot/imported/road_big_curve.glb-47623220d828faf52fdbeda371ecd486.scn"]
 
 [params]
 
@@ -39,14 +39,14 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "meshes": {
-"road_straight_Plane_002": {
+"road_big_curve_Mesh_003": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://blender/stage_1/road_straight.res",
-"save_to_file/path": "uid://o47iu6qj3bcc"
+"save_to_file/fallback_path": "res://blender/stage_1/road_big_curve.res",
+"save_to_file/path": "uid://dvdwag0hs45sj"
 }
 }
 }

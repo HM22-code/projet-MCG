@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://betd7n7lw7yrc"
-path="res://.godot/imported/road_big_curve.glb-46ce07bf8d804691a228ac328b9b9ca5.scn"
+uid="uid://bc1jk0aakbbxm"
+path="res://.godot/imported/road_left.glb-7e7e01a8a70e7611d6f10b28afd23f47.scn"
 
 [deps]
 
-source_file="res://blender/road_big_curve.glb"
-dest_files=["res://.godot/imported/road_big_curve.glb-46ce07bf8d804691a228ac328b9b9ca5.scn"]
+source_file="res://blender/road/road_left.glb"
+dest_files=["res://.godot/imported/road_left.glb-7e7e01a8a70e7611d6f10b28afd23f47.scn"]
 
 [params]
 
@@ -39,14 +39,14 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "meshes": {
-"road_big_curve_Mesh_003": {
+"road_left_Plane": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://blender/stage_1/road_big_curve.res",
-"save_to_file/path": "uid://dvdwag0hs45sj"
+"save_to_file/fallback_path": "res://blender/stage_1/road_turn.res",
+"save_to_file/path": "uid://b5m2yqi67r3wv"
 }
 }
 }
