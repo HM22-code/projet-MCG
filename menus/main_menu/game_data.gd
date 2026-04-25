@@ -22,6 +22,7 @@ func save_data():
 	config.set_value("preferences", "sensibilite_deplacement", sensibilite)
 	config.set_value("preferences", "luminosite", luminosite)
 	config.save(SAVE_PATH)
+	#print("Enregistré")
 
 ## Chargement des données du jeu sauvegardées à partir d'un fichier
 func load_data():
@@ -49,28 +50,23 @@ func get_score() -> int:
 func submit_score(final_score: int):
 	if final_score > best_score:
 		best_score = final_score
-		save_data()
 
 ## Sauvegarde niveau volume musique ambiante
 func submit_musique_ambiance(volume: int):
 	if (volume != volume_musique and 0 <= volume and volume <= 100):
 		volume_musique = volume
-		save_data()
 
 ## Sauvegarde niveau volume effets sonores
 func submit_effets_sonores(volume: int):
 	if (volume !=  volume_effets and 0 <= volume and volume <= 100):
-		volume_effets = volume_effets
-		save_data()
+		volume_effets = volume
 
 ## Sauvegarde sensibilité souris caméra
 func submit_sensibilite_deplacement(sensibilite_nouv: float):
-	if (sensibilite_nouv != sensibilite and 0 < sensibilite_nouv and sensibilite_nouv < 10):
+	if (sensibilite_nouv != sensibilite and 0 <= sensibilite_nouv and sensibilite_nouv <= 10):
 		sensibilite = sensibilite_nouv
-		save_data()
 
 ## Sauvegarde niveau de luminosité
 func submit_luminosite(value: int):
 	if (value != luminosite and 0 <= value and value <= 100):
 		luminosite = value
-		save_data()
