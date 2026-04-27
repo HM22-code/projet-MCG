@@ -35,7 +35,7 @@ transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.965
 [node name="HPProgressBar" type="ProgressBar" parent="Camera3D/CanvasLayer"]
 offset_left = 14.0
 offset_top = 14.0
-offset_right = 396.0
+offset_right = 466.0
 offset_bottom = 41.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_symyc")
 show_percentage = false
