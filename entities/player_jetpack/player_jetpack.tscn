@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://4pwi03f2rj7y"]
+[gd_scene load_steps=12 format=3 uid="uid://4pwi03f2rj7y"]
 
 [ext_resource type="Script" uid="uid://r4ictp6jr543" path="res://entities/player_jetpack/player_jetpack.gd" id="1_kpfu8"]
 
@@ -9,6 +9,13 @@ albedo_color = Color(0, 0, 1, 1)
 material = SubResource("StandardMaterial3D_symyc")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4flbx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kpfu8"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [sub_resource type="BoxMesh" id="BoxMesh_8n0i1"]
 size = Vector3(0.5, 0.4, 0.4)
@@ -50,18 +57,26 @@ transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.965
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera3D"]
 
-[node name="FuelProgressBar" type="ProgressBar" parent="Camera3D/CanvasLayer"]
+[node name="HPProgressBar" type="ProgressBar" parent="Camera3D/CanvasLayer"]
 offset_left = 14.0
-offset_top = 16.0
-offset_right = 240.0
-offset_bottom = 43.0
+offset_top = 14.0
+offset_right = 396.0
+offset_bottom = 41.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_kpfu8")
+show_percentage = false
+
+[node name="FuelProgressBar" type="ProgressBar" parent="Camera3D/CanvasLayer"]
+offset_left = 13.0
+offset_top = 53.0
+offset_right = 239.0
+offset_bottom = 80.0
 show_percentage = false
 
 [node name="ScoreLabel" type="Label" parent="Camera3D/CanvasLayer"]
-offset_left = 21.0
-offset_top = 56.0
-offset_right = 73.0
-offset_bottom = 79.0
+offset_left = 16.0
+offset_top = 88.0
+offset_right = 68.0
+offset_bottom = 111.0
 text = "Score :"
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]

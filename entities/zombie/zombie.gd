@@ -9,6 +9,8 @@ const WANDER_RADIUS := 6.0    # distance jusqu'où le zombie se balade à partir
 const WANDER_WAIT_MIN := 1.5  # secondes minimales où le zombie reste immobile avant de se balader
 const WANDER_WAIT_MAX := 3.5  # secondes maximales où le zombie reste immobile avant de se balader
 const ROTATION_SPEED  := 5.0  # vitesse de rotation
+const ATTACK_RANGE    := 1.8  # distance à partir d'où le zombie attaque le joueur
+const ATTACK_DAMAGE   := 10.0 # valeur d'attaque du zombie
 
 # états 
 enum State { IDLE, WANDER, CHASE }
@@ -112,12 +114,24 @@ func _wander_behaviour(delta: float) -> void:
 
 ## Comportement lors de l'état Chase
 func _chase_behaviour(delta) -> void:
+	var dist_player := global_position.distance_to(player.global_position)
+	# attaque si le joueur est proche
+	if dist_player <= ATTACK_RANGE:
+		# active deal_damage si joué jusqu'à la bonne keyframe
+		anim_state.travel("Attack")
+		_update_rotation_toward_player(delta)
+		return
+	anim_state.travel("Running")
 	nav_agent.set_target_position(player.global_position)
 	var next_point := nav_agent.get_next_path_position()
 	velocity = (next_point - global_position).normalized() * SPEED_CHASE
 	_update_rotation_toward_player(delta)
 
 # fonctions utiles
+
+## Inflige des dégats au joueur à l'impact (keyframe) de l'animation Attack
+func deal_damage():
+	player.take_damage(ATTACK_DAMAGE)
 
 ## Sélection aléatoire du prochain points de destination entre les déplacements
 func _pick_wander_destination() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5hm2qiq84uxs"]
+[gd_scene load_steps=6 format=3 uid="uid://b5hm2qiq84uxs"]
 
 [ext_resource type="Script" uid="uid://ddvtrssy83qnk" path="res://entities/player/player.gd" id="1_4flbx"]
 
@@ -9,6 +9,13 @@ albedo_color = Color(0, 0, 1, 1)
 material = SubResource("StandardMaterial3D_symyc")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4flbx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_symyc"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("CAMERA_CONTROLLER")]
 script = ExtResource("1_4flbx")
@@ -25,9 +32,17 @@ transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.965
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera3D"]
 
+[node name="HPProgressBar" type="ProgressBar" parent="Camera3D/CanvasLayer"]
+offset_left = 14.0
+offset_top = 14.0
+offset_right = 396.0
+offset_bottom = 41.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_symyc")
+show_percentage = false
+
 [node name="ScoreLabel" type="Label" parent="Camera3D/CanvasLayer"]
-offset_left = 12.0
-offset_top = 13.0
-offset_right = 52.0
-offset_bottom = 36.0
+offset_left = 16.0
+offset_top = 53.0
+offset_right = 68.0
+offset_bottom = 76.0
 text = "Score :"

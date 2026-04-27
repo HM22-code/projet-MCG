@@ -6,13 +6,16 @@ const JETPACK_FORCE = 12.0
 const JETPACK_FUEL_MAX = 100.0
 const JETPACK_FUEL_DRAIN = 20.0
 const JETPACK_FUEL_REGEN = 10.0
+const HP_MAX = 100.0
 
-var jetpack_fuel = 100.0
+var hp = HP_MAX
+var jetpack_fuel = JETPACK_FUEL_MAX
 var jetpack_active = false
 
-@onready var progress_bar: ProgressBar = $Camera3D/CanvasLayer/FuelProgressBar
+@onready var fuel_bar: ProgressBar = $Camera3D/CanvasLayer/FuelProgressBar
 @onready var gpu_particles_3d: GPUParticles3D = $MeshInstance3D2/GPUParticles3D
 @onready var score_label: Label = $Camera3D/CanvasLayer/ScoreLabel
+@onready var hp_bar: ProgressBar = $Camera3D/CanvasLayer/HPProgressBar
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -42,6 +45,8 @@ func _physics_process(delta: float) -> void:
 		jetpack_fuel += JETPACK_FUEL_REGEN * delta
 		jetpack_fuel = min(jetpack_fuel, JETPACK_FUEL_MAX)
 	# Mise à jour affichage pour le joueur
+	# TODO : à modifier avec les signaux pour éviter une mis à jour à chaque frame
+	update_hp_bar()
 	update_fuel_bar()
 	update_score_label()
 	# Saut
@@ -64,10 +69,10 @@ func get_fuel_percent() -> float:
 
 ## Mise à jour affichage fuel (énergie) du jetpack
 func update_fuel_bar():
-	if not progress_bar:
+	if not fuel_bar:
 		return
-	progress_bar.value = jetpack_fuel
-	var style = progress_bar.get_theme_stylebox("fill") as StyleBoxFlat
+	fuel_bar.value = jetpack_fuel
+	var style = fuel_bar.get_theme_stylebox("fill") as StyleBoxFlat
 	if style:
 		if jetpack_fuel > 60:
 			style.bg_color = Color.GREEN
@@ -80,6 +85,18 @@ func update_fuel_bar():
 func update_score_label():
 		score_label.text = "Score : " + str(GameData.get_score())
 
+## Mise à jour barre de vie
+func update_hp_bar():
+	if not hp_bar:
+		return
+	hp_bar.value = hp
+
+## Le joueur prend des dégâts
+func take_damage(amount: int):
+	hp = max(0, hp - amount)
+	if hp <= 0:
+		# TODO : Game over
+		print("Game over")
 
 # fonctions mouvement caméra à la souris
 
