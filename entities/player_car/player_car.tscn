@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://byfn07skd8226"]
+
+[ext_resource type="Script" uid="uid://du50mi5w86ctg" path="res://entities/player_car/player_car.gd" id="1_k5itg"]
+
+[node name="Player" type="CharacterBody3D" unique_id=923608163]
+script = ExtResource("1_k5itg")
