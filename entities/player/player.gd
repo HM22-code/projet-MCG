@@ -1,9 +1,10 @@
 extends CharacterBody3D
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+var SPEED = 5.0 #valeurs différents dans classe enfant player_carS
+var JUMP_VELOCITY = 4.5
 
 @onready var score_label: Label = $Camera3D/CanvasLayer/ScoreLabel
+@onready var progress_bar: ProgressBar = $Camera3D/CanvasLayer/LifeBar
 
 func _physics_process(delta: float) -> void:
 	# Gravité

@@ -1,6 +1,34 @@
-[gd_scene format=3 uid="uid://byfn07skd8226"]
+[gd_scene load_steps=4 format=3 uid="uid://byfn07skd8226"]
 
 [ext_resource type="Script" uid="uid://du50mi5w86ctg" path="res://entities/player_car/player_car.gd" id="1_k5itg"]
 
-[node name="Player" type="CharacterBody3D" unique_id=923608163]
+[sub_resource type="BoxShape3D" id="BoxShape3D_k5itg"]
+size = Vector3(2, 2, 4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wmwku"]
+size = Vector3(2, 2, 4)
+
+[node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_k5itg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_k5itg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_wmwku")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 2, 3)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera3D"]
+
+[node name="ScoreLabel" type="Label" parent="Camera3D/CanvasLayer"]
+offset_left = 12.0
+offset_top = 13.0
+offset_right = 52.0
+offset_bottom = 36.0
+text = "Score :"
+
+[node name="LifeBar" type="ProgressBar" parent="Camera3D/CanvasLayer"]
+offset_right = 4.0
+offset_bottom = 27.0
