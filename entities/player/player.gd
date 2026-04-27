@@ -1,20 +1,22 @@
 extends CharacterBody3D
 
-const LIFE_POINTS_MAX = 100
-var life_points = 100
-var SPEED = 5.0 #valeurs différents dans classe enfant player_carS
-var JUMP_VELOCITY = 4.5
+const SPEED = 5.0
+const JUMP_VELOCITY = 4.5
+const HP_MAX = 100.0
+
+var hp = HP_MAX
 
 @onready var score_label: Label = $Camera3D/CanvasLayer/ScoreLabel
-@onready var life_bar: ProgressBar = $Camera3D/CanvasLayer/LifeBar
+@onready var hp_bar: ProgressBar = $Camera3D/CanvasLayer/HPProgressBar
 
 func _physics_process(delta: float) -> void:
 	# Gravité
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	# Mise à jour affichage pour le joueur
+	# TODO : à modifier avec les signaux pour éviter une mis à jour à chaque frame
 	update_score_label()
-	update_life_bar()
+	update_hp_bar()
 	# Saut
 	if Input.is_action_just_pressed("saut") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -60,6 +62,18 @@ func get_life_percent():
 
 
 
+## Mise à jour barre de vie
+func update_hp_bar():
+	if not hp_bar:
+		return
+	hp_bar.value = hp
+
+## Le joueur prend des dégâts
+func take_damage(amount: int):
+	hp = max(0, hp - amount)
+	if hp <= 0:
+		# TODO : Game over
+		print("Game over")
 
 # fonctions mouvement caméra à la souris
 
