@@ -90,7 +90,6 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="sol" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 250, 0, 0)
-visible = false
 mesh = SubResource("PlaneMesh_202f3")
 skeleton = NodePath("")
 

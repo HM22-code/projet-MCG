@@ -25,13 +25,16 @@ transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.965
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera3D"]
 
-[node name="ScoreLabel" type="Label" parent="Camera3D/CanvasLayer"]
-offset_left = 12.0
-offset_top = 13.0
-offset_right = 52.0
-offset_bottom = 36.0
-text = "Score :"
-
 [node name="LifeBar" type="ProgressBar" parent="Camera3D/CanvasLayer"]
-offset_right = 4.0
-offset_bottom = 27.0
+offset_left = 14.0
+offset_top = 16.0
+offset_right = 240.0
+offset_bottom = 43.0
+show_percentage = false
+
+[node name="ScoreLabel" type="Label" parent="Camera3D/CanvasLayer"]
+offset_left = 21.0
+offset_top = 56.0
+offset_right = 73.0
+offset_bottom = 79.0
+text = "Score :"
