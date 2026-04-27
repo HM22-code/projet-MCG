@@ -3,5 +3,5 @@ extends "res://entities/player/player.gd"
 
 func _ready():
 	super._ready() #Player readz
-	SPEED = 20.0
-	JUMP_VELOCITY = 0 #Voiture peut pas sauter
+	var speed = 20.0
+	var jump_velocity = 0 #Voiture peut pas sauter

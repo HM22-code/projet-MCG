@@ -36,31 +36,6 @@ func _physics_process(delta: float) -> void:
 func update_score_label():
 		score_label.text = "Score : " + str(GameData.get_score())
 		
-## Mise à jour affichage barre de vie
-func update_life_bar():
-	if not life_bar:
-		return
-	life_bar.value = life_points #life points doit être modifié et toujours actuel
-	var ratio = get_life_percent()
-	var style = life_bar.get_theme_stylebox("fill").duplicate()
-	if ratio > 0.5:
-		style.bg_color = Color("#8b0000")   # Rouge sang — normal
-	elif ratio > 0.25:
-		style.bg_color = Color("#5a0000")   # Rouge très sombre — danger
-	else:
-		style.bg_color = Color("#2a0000")   # Presque noir — critique		
-	life_bar.add_theme_stylebox_override("fill", style)
-	
-	
-#prendre dégâts d'ennemies
-func take_damage(damage: int):
-	life_points = clamp(life_points - damage, 0, LIFE_POINTS_MAX)
-
-## Retourne le percentage de points de la vie
-func get_life_percent():
-	return life_points / LIFE_POINTS_MAX
-
-
 
 ## Mise à jour barre de vie
 func update_hp_bar():
