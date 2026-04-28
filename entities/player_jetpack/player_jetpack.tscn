@@ -43,7 +43,7 @@ vertex_color_use_as_albedo = true
 [sub_resource type="SphereMesh" id="SphereMesh_8n0i1"]
 material = SubResource("StandardMaterial3D_kpfu8")
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player2" type="CharacterBody3D"]
 script = ExtResource("1_kpfu8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

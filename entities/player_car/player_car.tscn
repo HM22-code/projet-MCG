@@ -8,7 +8,7 @@ size = Vector3(2, 2, 4)
 [sub_resource type="BoxMesh" id="BoxMesh_wmwku"]
 size = Vector3(2, 2, 4)
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player2" type="CharacterBody3D"]
 script = ExtResource("1_k5itg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -22,7 +22,7 @@ transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.965
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera3D"]
 
-[node name="LifeBar" type="ProgressBar" parent="Camera3D/CanvasLayer"]
+[node name="HPProgressBar" type="ProgressBar" parent="Camera3D/CanvasLayer"]
 offset_left = 14.0
 offset_top = 16.0
 offset_right = 240.0
