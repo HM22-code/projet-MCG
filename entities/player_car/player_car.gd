@@ -1,9 +1,9 @@
 extends Player
 
-const DELAI = 5 #véhicule n'est pas instanement en vitesse maximale
-#ralentir dure également un peu de temp
+const DELAI = 2 #véhicule n'est pas instanement en vitesse maximale
+#ralentir dure également un peu de temp --> DELAI en secondes
 var pointer_delai = 0
-var last_direction
+var last_direction = 0
 
 func _ready():
 	super._ready() #Player ready
@@ -19,10 +19,11 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("haut"): #accélerer
 		pointer_delai = clamp(pointer_delai + delta, 0, DELAI)
 	elif pointer_delai > 0: #ralentir
-		pointer_delai = clamp(pointer_delai - delta * 2, 0, DELAI)
+		pointer_delai = clamp(pointer_delai - delta, 0, DELAI)
 	var delai_factor = delai_func(pointer_delai)
 	print(delai_factor)
-	#print(last_direction)
+	print(last_direction)
+	
 	
 	# Mouvement horizontal
 	var input_dir := Input.get_vector("gauche", "droite", "haut", "bas")
@@ -32,8 +33,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction.x * SPEED * delai_factor
 		velocity.z = direction.z * SPEED * delai_factor
 	elif last_direction and delai_factor > 0: #ralentissement
-		velocity.x = direction.x * SPEED * delai_factor
-		velocity.z = direction.z * SPEED * delai_factor
+		velocity.x = last_direction.x * SPEED * delai_factor
+		velocity.z = last_direction.z * SPEED * delai_factor
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED * delai_factor)
 		velocity.z = move_toward(velocity.z, 0, SPEED * delai_factor)
