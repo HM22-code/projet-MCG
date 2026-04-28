@@ -1,25 +1,15 @@
-extends CharacterBody3D
+extends Player
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
 const JETPACK_FORCE = 12.0
 const JETPACK_FUEL_MAX = 100.0
 const JETPACK_FUEL_DRAIN = 20.0
 const JETPACK_FUEL_REGEN = 10.0
-const HP_MAX = 100.0
 
-var hp = HP_MAX
 var jetpack_fuel = JETPACK_FUEL_MAX
 var jetpack_active = false
 
 @onready var fuel_bar: ProgressBar = $Camera3D/CanvasLayer/FuelProgressBar
 @onready var gpu_particles_3d: GPUParticles3D = $MeshInstance3D2/GPUParticles3D
-@onready var score_label: Label = $Camera3D/CanvasLayer/ScoreLabel
-@onready var hp_bar: ProgressBar = $Camera3D/CanvasLayer/HPProgressBar
-
-func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	add_to_group("player")
 
 func _physics_process(delta: float) -> void:
 	# Activation du jetpack
@@ -80,58 +70,3 @@ func update_fuel_bar():
 			style.bg_color = Color.ORANGE
 		else:
 			style.bg_color = Color.RED
-
-## Mise à jour affichage score
-func update_score_label():
-		score_label.text = "Score : " + str(GameData.get_score())
-
-## Mise à jour barre de vie
-func update_hp_bar():
-	if not hp_bar:
-		return
-	hp_bar.value = hp
-
-## Le joueur prend des dégâts
-func take_damage(amount: int):
-	hp = max(0, hp - amount)
-	if hp <= 0:
-		# TODO : Game over
-		print("Game over")
-
-# fonctions mouvement caméra à la souris
-
-var _mouse_input : bool = false
-var _mouse_rotation : Vector3
-var _rotation_input : float
-var _tilt_input : float
-var _player_rotation : Vector3
-var _camera_rotation : Vector3
-
-func _unhandled_input(event):
-	_mouse_input = event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED
-	if _mouse_input :
-		_rotation_input = -event.relative.x * MOUSE_SENSITIVITY
-		_tilt_input = -event.relative.y * MOUSE_SENSITIVITY
-		transform.basis = transform.basis.rotated(Vector3(0,1,0), _rotation_input)
-
-@export var TILT_LOWER_LIMIT := deg_to_rad(-90.0)
-@export var TILT_UPPER_LIMIT := deg_to_rad(90.0)
-@export var CAMERA_CONTROLLER : Camera3D
-@export var MOUSE_SENSITIVITY : float = 0.005 
-
-func _update_camera(delta):
-	
-	_mouse_rotation.x += _tilt_input * delta
-	_mouse_rotation.x = clamp(_mouse_rotation.x, TILT_LOWER_LIMIT, TILT_UPPER_LIMIT)
-	_mouse_rotation.y += _rotation_input * delta
-	
-	_player_rotation = Vector3(0.0,_mouse_rotation.y,0.0)
-	_camera_rotation = Vector3(_mouse_rotation.x,0.0,0.0)
-	
-	CAMERA_CONTROLLER.transform.basis = Basis.from_euler(_camera_rotation)
-	CAMERA_CONTROLLER.rotation.z = 0.0
-	
-	global_transform.basis = Basis.from_euler(_player_rotation)
-	
-	_rotation_input = 0.0
-	_tilt_input = 0.0

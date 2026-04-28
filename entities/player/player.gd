@@ -1,9 +1,11 @@
+class_name Player
 extends CharacterBody3D
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+
 const HP_MAX = 100.0
 
+var SPEED = 5.0
+var JUMP_VELOCITY = 4.5
 var hp = HP_MAX
 
 @onready var score_label: Label = $Camera3D/CanvasLayer/ScoreLabel

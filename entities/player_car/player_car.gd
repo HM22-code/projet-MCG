@@ -1,7 +1,6 @@
-extends "res://entities/player/player.gd"
-#Profiter des méthodes de base
+extends Player
 
 func _ready():
-	super._ready() #Player readz
-	var speed = 20.0
-	var jump_velocity = 0 #Voiture peut pas sauter
+	super._ready() #Player ready
+	SPEED = 20.0
+	JUMP_VELOCITY = 0 #Voiture ne peut pas sauter
