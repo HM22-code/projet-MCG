@@ -11,6 +11,7 @@ const WANDER_WAIT_MAX := 3.5  # secondes maximales où le zombie reste immobile 
 const ROTATION_SPEED  := 5.0  # vitesse de rotation
 const ATTACK_RANGE    := 1.8  # distance à partir d'où le zombie attaque le joueur
 const ATTACK_DAMAGE   := 10.0 # valeur d'attaque du zombie
+const ACTIVE_RANGE := 50.0    # distance à partir d'où le zombie est actif
 
 # états 
 enum State { IDLE, WANDER, CHASE }
@@ -39,6 +40,10 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	# en action si le noeud player est présent
 	if not is_instance_valid(player):
+		return
+	# en action si le zombie n'est pas trop éloigné du joueur
+	if global_position.distance_to(player.global_position) > ACTIVE_RANGE:
+		velocity = Vector3.ZERO
 		return
 	_update_state()
 	_execute_state(delta)
