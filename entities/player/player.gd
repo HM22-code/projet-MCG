@@ -1,11 +1,12 @@
 class_name Player
 extends CharacterBody3D
 
-
 const HP_MAX = 100.0
 
-var SPEED = 5.0
-var JUMP_VELOCITY = 4.5
+@export var SPEED = 5.0
+@export var JUMP_VELOCITY = 4.5
+@export var GRAVITY = 20.0
+
 var hp = HP_MAX
 
 @onready var score_label: Label = $Camera3D/CanvasLayer/ScoreLabel
@@ -14,9 +15,10 @@ var hp = HP_MAX
 func _physics_process(delta: float) -> void:
 	# Gravité
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity.y -= GRAVITY * delta
 	# Mise à jour affichage pour le joueur
 	# TODO : à modifier avec les signaux pour éviter une mis à jour à chaque frame
+	
 	update_score_label()
 	update_hp_bar()
 	# Saut
