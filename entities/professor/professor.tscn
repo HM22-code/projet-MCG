@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://cphdcinick4vd"]
+
+[ext_resource type="Script" uid="uid://bhgfhsnqpm2fo" path="res://entities/professor/professor.gd" id="1_botdy"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fvg2h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_botdy"]
+albedo_color = Color(1, 0, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8sh0p"]
+material = SubResource("StandardMaterial3D_botdy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8sh0p"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jip8e"]
+material = SubResource("StandardMaterial3D_8sh0p")
+size = Vector3(1, 1, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hq5pn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_botdy"]
+size = Vector3(4, 1, 4)
+
+[node name="Professor" type="AnimatableBody3D"]
+script = ExtResource("1_botdy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_fvg2h")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_8sh0p")
+
+[node name="Indicator" type="Node3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0403092, 0)
+visible = false
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="MeshInstance3D/Indicator"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D/Indicator/AnimatableBody3D"]
+mesh = SubResource("BoxMesh_jip8e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Indicator/AnimatableBody3D"]
+shape = SubResource("BoxShape3D_hq5pn")
+disabled = true
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_botdy")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

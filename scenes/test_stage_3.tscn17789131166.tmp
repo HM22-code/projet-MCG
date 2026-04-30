@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bmxwp8wg55vwf"]
+[gd_scene load_steps=11 format=3 uid="uid://bmxwp8wg55vwf"]
 
 [ext_resource type="MeshLibrary" uid="uid://nvoelvh0tl4s" path="res://mesh_library/mesh_library_stage_3.tres" id="1_x74nj"]
 [ext_resource type="PackedScene" uid="uid://bayi1q2r2ond4" path="res://entities/zombie/zombie.tscn" id="2_g865m"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://4pwi03f2rj7y" path="res://entities/player_jetpack/player_jetpack.tscn" id="3_sh02n"]
 [ext_resource type="PackedScene" uid="uid://bsfcuyov1kqm7" path="res://menus/pause_menu/pause_menu.tscn" id="4_cxkfx"]
 [ext_resource type="PackedScene" uid="uid://cphdcinick4vd" path="res://entities/professor/professor.tscn" id="4_sh02n"]
-[ext_resource type="PackedScene" uid="uid://bkk5ncg8mqs63" path="res://ui/dialogue_ui/dialogue_ui.tscn" id="6_cxkfx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mf4mk"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -76,5 +75,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.179689, 1.0922256, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0300417, 0)
 
 [node name="PauseMenu" parent="." instance=ExtResource("4_cxkfx")]
-
-[node name="DialogueUi" parent="." instance=ExtResource("6_cxkfx")]
