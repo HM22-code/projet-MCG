@@ -21,9 +21,6 @@ func _physics_process(delta: float) -> void:
 	elif pointer_delai > 0: #ralentir
 		pointer_delai = clamp(pointer_delai - delta, 0, DELAI)
 	var delai_factor = delai_func(pointer_delai)
-	print(delai_factor)
-	print(last_direction)
-	
 	
 	# Mouvement horizontal
 	var input_dir := Input.get_vector("gauche", "droite", "haut", "bas")
