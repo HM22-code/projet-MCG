@@ -213,4 +213,4 @@ shape = SubResource("ConcavePolygonShape3D_thldd")
 [node name="PauseMenu" parent="." instance=ExtResource("5_37lgv")]
 
 [node name="Player" parent="." instance=ExtResource("5_rq0lh")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 1, 0)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 3, 0)

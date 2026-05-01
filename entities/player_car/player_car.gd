@@ -9,12 +9,16 @@ func _ready():
 	super._ready() #Player ready
 	SPEED = 20.0
 	JUMP_VELOCITY = 0 #Voiture ne peut pas sauter
+	#global_position = Vector3(0, 5, 0)
 	
 func _physics_process(delta: float) -> void:
 	# TODO : à modifier avec les signaux pour éviter une mis à jour à chaque frame
 	update_score_label()
 	update_hp_bar()
 	
+	# Gravité
+	if not is_on_floor():
+		velocity += get_gravity() * delta
 	#delai au début 0, monte à 1 et reste jusqu'au ralentissement
 	if Input.is_action_pressed("haut"): #accélerer
 		pointer_delai = clamp(pointer_delai + delta, 0, DELAI)
