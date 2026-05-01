@@ -1,0 +1,445 @@
+{
+	"start": {
+		"text": "Aide moi à répondre à ces questions. J'ai perdu la mémoire. Grâce à tes réponses je pourrais peut être me rappeler de mes anciens travaux. Il en va de la survie de l'humanité.",
+		"responses": [
+			{
+				"text": "C'est parti !",
+				"points": 0
+			}
+		]
+	},
+	"end": {
+		"text": "Merci de m'avoir aidé. J'espère que cela m'aidera dans ma quête.",
+		"responses": [
+			{
+				"text": "OK",
+				"points": 0
+			}
+		]
+	},
+	"1": {
+		"text": " Quel est le plus lourd 1kg de plume ou 1kg de plomb ?",
+		"responses": [
+			{
+				"text": "Le plomb",
+				"points": 0
+			},
+			{
+				"text": "La plume",
+				"points": 0
+			},
+			{
+				"text": "Aucun des deux",
+				"points": 10
+			}
+		]
+	},
+	"2": {
+		"text": "La lumière est elle une particule ou une onde ?",
+		"responses": [
+			{
+				"text": "Une onde",
+				"points": 10
+			},
+			{
+				"text": "Une particule",
+				"points": 0
+			},
+			{
+				"text": "Aucune des deux",
+				"points": 0
+			}
+		]
+	},
+	"3": {
+		"text": "L’eau est composée de quels atomes ?",
+		"responses": [
+			{
+				"text": "Hydrogène et oxygène",
+				"points": 10
+			},
+			{
+				"text": "Carbone et oxygène",
+				"points": 0
+			},
+			{
+				"text": "Azote et hydrogène",
+				"points": 0
+			}
+		]
+	},
+	"4": {
+		"text": "Combien de côtés a un triangle ?",
+		"responses": [
+			{
+				"text": "3",
+				"points": 10
+			},
+			{
+				"text": "4",
+				"points": 0
+			},
+			{
+				"text": "5",
+				"points": 0
+			}
+		]
+	},
+	"5": {
+		"text": "Que signifie CPU en informatique ?",
+		"responses": [
+			{
+				"text": "Central Processing Unit",
+				"points": 10
+			},
+			{
+				"text": "Computer Personal Unit",
+				"points": 0
+			},
+			{
+				"text": "Central Program Utility",
+				"points": 0
+			}
+		]
+	},
+	"6": {
+		"text": "Quelle planète est la plus proche du Soleil ?",
+		"responses": [
+			{
+				"text": "Mercure",
+				"points": 10
+			},
+			{
+				"text": "Vénus",
+				"points": 0
+			},
+			{
+				"text": "Terre",
+				"points": 0
+			}
+		]
+	},
+	"7": {
+		"text": "Quel est le symbole chimique de l’oxygène ?",
+		"responses": [
+			{
+				"text": "O",
+				"points": 10
+			},
+			{
+				"text": "Ox",
+				"points": 0
+			},
+			{
+				"text": "Og",
+				"points": 0
+			}
+		]
+	},
+	"8": {
+		"text": "Combien font 10 × 5 ?",
+		"responses": [
+			{
+				"text": "50",
+				"points": 10
+			},
+			{
+				"text": "15",
+				"points": 0
+			},
+			{
+				"text": "100",
+				"points": 0
+			}
+		]
+	},
+	"9": {
+		"text": "Quel langage est principalement utilisé pour styliser les pages web ?",
+		"responses": [
+			{
+				"text": "CSS",
+				"points": 10
+			},
+			{
+				"text": "HTML",
+				"points": 0
+			},
+			{
+				"text": "Python",
+				"points": 0
+			}
+		]
+	},
+	"10": {
+		"text": "La vitesse de la lumière est-elle plus rapide que le son ?",
+		"responses": [
+			{
+				"text": "Oui",
+				"points": 10
+			},
+			{
+				"text": "Non",
+				"points": 0
+			},
+			{
+				"text": "Elles sont égales",
+				"points": 0
+			}
+		]
+	},
+	"11": {
+		"text": "Quelle est l’unité de la force ?",
+		"responses": [
+			{
+				"text": "Newton",
+				"points": 10
+			},
+			{
+				"text": "Joule",
+				"points": 0
+			},
+			{
+				"text": "Watt",
+				"points": 0
+			}
+		]
+	},
+	"12": {
+		"text": "Quel symbole est utilisé pour un commentaire en Python ?",
+		"responses": [
+			{
+				"text": "#",
+				"points": 10
+			},
+			{
+				"text": "//",
+				"points": 0
+			},
+			{
+				"text": "<!-- -->",
+				"points": 0
+			}
+		]
+	},
+	"13": {
+		"text": "Que signifie RAM ?",
+		"responses": [
+			{
+				"text": "Random Access Memory",
+				"points": 10
+			},
+			{
+				"text": "Read Access Memory",
+				"points": 0
+			},
+			{
+				"text": "Run Active Memory",
+				"points": 0
+			}
+		]
+	},
+	"14": {
+		"text": "Quel est le rôle principal d’un système d’exploitation ?",
+		"responses": [
+			{
+				"text": "Gérer le matériel et les programmes",
+				"points": 10
+			},
+			{
+				"text": "Créer des sites web",
+				"points": 0
+			},
+			{
+				"text": "Stocker uniquement des fichiers",
+				"points": 0
+			}
+		]
+	},
+	"15": {
+		"text": "Quel langage est souvent utilisé côté serveur ?",
+		"responses": [
+			{
+				"text": "PHP",
+				"points": 10
+			},
+			{
+				"text": "HTML",
+				"points": 0
+			},
+			{
+				"text": "CSS",
+				"points": 0
+			}
+		]
+	},
+	"16": {
+		"text": "Que signifie URL ?",
+		"responses": [
+			{
+				"text": "Uniform Resource Locator",
+				"points": 10
+			},
+			{
+				"text": "Universal Resource Link",
+				"points": 0
+			},
+			{
+				"text": "User Remote Location",
+				"points": 0
+			}
+		]
+	},
+	"17": {
+		"text": "Quel composant exécute les instructions d’un programme ?",
+		"responses": [
+			{
+				"text": "CPU",
+				"points": 10
+			},
+			{
+				"text": "RAM",
+				"points": 0
+			},
+			{
+				"text": "Disque dur",
+				"points": 0
+			}
+		]
+	},
+	"18": {
+		"text": "Quel est le langage principalement utilisé pour interagir avec une base de données ?",
+		"responses": [
+			{
+				"text": "SQL",
+				"points": 10
+			},
+			{
+				"text": "CSS",
+				"points": 0
+			},
+			{
+				"text": "C++",
+				"points": 0
+			}
+		]
+	},
+	"19": {
+		"text": "Que signifie HTTP ?",
+		"responses": [
+			{
+				"text": "HyperText Transfer Protocol",
+				"points": 10
+			},
+			{
+				"text": "HighText Transfer Protocol",
+				"points": 0
+			},
+			{
+				"text": "HyperTool Transfer Program",
+				"points": 0
+			}
+		]
+	},
+	"20": {
+		"text": "Quel type de langage est JavaScript ?",
+		"responses": [
+			{
+				"text": "Langage de programmation",
+				"points": 10
+			},
+			{
+				"text": "Système d’exploitation",
+				"points": 0
+			},
+			{
+				"text": "Base de données",
+				"points": 0
+			}
+		]
+	},
+	"21": {
+		"text": "Quel est le rôle de CSS ?",
+		"responses": [
+			{
+				"text": "Mettre en forme les pages web",
+				"points": 10
+			},
+			{
+				"text": "Structurer le contenu",
+				"points": 0
+			},
+			{
+				"text": "Gérer les bases de données",
+				"points": 0
+			}
+		]
+	},
+	"22": {
+		"text": "Quel est le format d’image le plus courant sur le web ?",
+		"responses": [
+			{
+				"text": "JPEG",
+				"points": 10
+			},
+			{
+				"text": "TXT",
+				"points": 0
+			},
+			{
+				"text": "MP3",
+				"points": 0
+			}
+		]
+	},
+	"23": {
+		"text": "Quel langage est utilisé pour créer des applications Android ?",
+		"responses": [
+			{
+				"text": "Java",
+				"points": 10
+			},
+			{
+				"text": "Python",
+				"points": 0
+			},
+			{
+				"text": "HTML",
+				"points": 0
+			}
+		]
+	},
+	"24": {
+		"text": "Que signifie API ?",
+		"responses": [
+			{
+				"text": "Application Programming Interface",
+				"points": 10
+			},
+			{
+				"text": "Advanced Program Interaction",
+				"points": 0
+			},
+			{
+				"text": "Application Process Integration",
+				"points": 0
+			}
+		]
+	},
+	"25": {
+		"text": "Quel est le rôle d’un navigateur web ?",
+		"responses": [
+			{
+				"text": "Afficher des pages web",
+				"points": 10
+			},
+			{
+				"text": "Compiler du code",
+				"points": 0
+			},
+			{
+				"text": "Stocker des données",
+				"points": 0
+			}
+		]
+	}
+}
