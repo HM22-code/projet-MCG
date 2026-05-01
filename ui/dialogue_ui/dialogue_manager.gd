@@ -1,11 +1,12 @@
 extends Node
 
-signal question_started(data: Dictionary)
+signal question_started(data: Dictionary, npc: Node)
 signal answer_given(points: int)
-signal question_ended(total_score: int)
+signal question_ended(total_score: int, npc: Node)
 
 const QUESTION_NUMBER = 3
 
+var npc: Node
 var questions: Dictionary = {}
 var questions_size: int
 var questions_selected: Array
@@ -18,14 +19,15 @@ func _ready():
 	questions_size = questions.size() - 2
 
 ## Démarrage dialogue avec questions
-func start_quiz(start_node: String):
+func start_quiz(start_node: String, n: Node ):
 	total_score = 0
+	npc = n
 	current_node = start_node
 	if  start_node == "end":
 		questions_selected.append("stop")
 	else:
 		select_questions()
-	emit_signal("question_started", questions[start_node])
+	emit_signal("question_started", questions[start_node], npc)
 
 ## Sélection de questions aléatoires différentes
 func select_questions():
@@ -53,10 +55,10 @@ func answer(response: Dictionary):
 ## Redirection prochaine question ou fin dialogue si "stop"
 func go_to(node_id: String):
 	if node_id == "stop" or not questions.has(node_id):
-		emit_signal("question_ended", total_score)
+		emit_signal("question_ended", total_score, npc)
 		return
 	if questions[node_id]["responses"].is_empty():
-		emit_signal("question_ended", total_score)
+		emit_signal("question_ended", total_score, npc)
 		return
 	current_node = node_id
-	emit_signal("question_started", questions[node_id])
+	emit_signal("question_started", questions[node_id], npc)

@@ -54,8 +54,9 @@ func speak(text: String):
 			await get_tree().create_timer(0.02).timeout
 		is_playing_dialogue = false
 
+@warning_ignore("unused_parameter")
 ## Action au signal question_started
-func on_question_started(data: Dictionary):
+func on_question_started(data: Dictionary, npc: Node):
 	# Affichage texte
 	var text = data["text"]
 	speaker_text.text = text
@@ -90,6 +91,6 @@ func on_answer_given(points: int):
 
 @warning_ignore("unused_parameter")
 ## Action au signal question_ended
-func on_question_ended(total_score: int):
+func on_question_ended(total_score: int, npc: Node):
 	GameData.add_score(total_score)
 	hide_ui()

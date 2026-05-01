@@ -19,16 +19,17 @@ func _process(delta: float) -> void:
 
 @warning_ignore("unused_parameter")
 ## Action au signal question_ended
-func _on_question_ended(total_score: int):
-	dialogue_finished = true
+func _on_question_ended(total_score: int, npc: Node):
+	if npc == self:
+		dialogue_finished = true
 
 ## Interaction pour déclencher le dialogue
 func _unhandled_input(event):
 	if player_nearby and event.is_action_pressed("interagir"): 
 		if not dialogue_finished:
-			DialogueManager.start_quiz("start")
+			DialogueManager.start_quiz("start", self)
 		else:
-			DialogueManager.start_quiz("end")
+			DialogueManager.start_quiz("end", self)
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
