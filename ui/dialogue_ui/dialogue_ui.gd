@@ -2,7 +2,9 @@ extends CanvasLayer
 
 @onready var speaker_text: RichTextLabel = $Panel/Background/MarginContainer/VBoxContainer/HBoxContainer/SpeakerText
 @onready var resp_container: VBoxContainer = $Panel/Background/MarginContainer/VBoxContainer/HBoxContainer/ResponsesBox
+@onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
 
+var is_playing_dialogue = false
 
 func _ready() -> void:
 	# Menu actif en pause
@@ -29,11 +31,36 @@ func hide_ui():
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
+## Jouer audio à partir d'un texte
+func speak(text: String):
+	if is_playing_dialogue:
+		return
+	else:
+		is_playing_dialogue = true
+		for character in text:
+			# Arrêt du son si arrêt dialogue
+			if not is_playing_dialogue:
+				audio_player.stop()
+				return
+			# Pause audio au espace vide
+			if character == " ":
+				await get_tree().create_timer(0.05).timeout
+				continue
+			# Modification du pitch du son
+			audio_player.pitch_scale = randf_range(0.8, 1.4)
+			if character in ["a", "e", "i", "o", "u"]:
+				audio_player.pitch_scale += 0.2
+			audio_player.play()
+			await get_tree().create_timer(0.02).timeout
+		is_playing_dialogue = false
 
 ## Action au signal question_started
 func on_question_started(data: Dictionary):
-	speaker_text.text = data["text"]
+	# Affichage texte
+	var text = data["text"]
+	speaker_text.text = text
 	show_ui()
+	speak(text)
 	# Suppression des anciens bouttons
 	for item in resp_container.get_children():
 		item.queue_free()
@@ -58,7 +85,8 @@ func action_response(rep: Dictionary, btn: Button):
 @warning_ignore("unused_parameter")
 ## Action au signal answer_given
 func on_answer_given(points: int):
-	pass
+	if is_playing_dialogue == true:
+		is_playing_dialogue = false
 
 @warning_ignore("unused_parameter")
 ## Action au signal question_ended

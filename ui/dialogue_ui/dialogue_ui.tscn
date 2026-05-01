@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkk5ncg8mqs63"]
+[gd_scene load_steps=4 format=3 uid="uid://bkk5ncg8mqs63"]
 
 [ext_resource type="Script" uid="uid://ff7bs358sib5" path="res://ui/dialogue_ui/dialogue_ui.gd" id="1_r8sqs"]
+[ext_resource type="AudioStream" uid="uid://blwpnkqdo82qr" path="res://ui/dialogue_ui/huh.wav" id="2_lfmeu"]
 
 [sub_resource type="Theme" id="Theme_p6li3"]
 default_font_size = 23
@@ -61,5 +62,6 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_lfmeu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
