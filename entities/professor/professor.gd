@@ -7,10 +7,12 @@ var speaker_name: String
 var player_nearby: bool = false
 var dialogue_finished: bool = false
 
-@onready var indicator: Node3D = $MeshInstance3D/Indicator
+@onready var indicator: Node3D = $Indicator
+@onready var animation_player: AnimationPlayer = $Prof/AnimationPlayer
 
 func _ready() -> void:
 	DialogueManager.question_ended.connect(_on_question_ended)
+	animation_player.play("Idle")
 
 func _process(delta: float) -> void:
 	indicator.rotate_y(ROTATION_SPEED * delta)

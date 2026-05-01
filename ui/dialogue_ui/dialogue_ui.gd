@@ -37,8 +37,11 @@ func on_question_started(data: Dictionary):
 	# Suppression des anciens bouttons
 	for item in resp_container.get_children():
 		item.queue_free()
+	# Mélange des réponses
+	var responses = data.get("responses", [])
+	responses.shuffle()
 	# Ajout des boutons de réponses
-	for response in data.get("responses", []):
+	for response in responses:
 		var btn = Button.new()
 		btn.text = response["text"]
 		btn.alignment = HORIZONTAL_ALIGNMENT_LEFT
