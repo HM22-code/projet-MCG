@@ -10,6 +10,8 @@ var hp = HP_MAX
 
 @onready var score_label: Label = $Camera3D/CanvasLayer/ScoreLabel
 @onready var hp_bar: ProgressBar = $Camera3D/CanvasLayer/HPProgressBar
+#pour afficher après le mort
+@onready var death_screen = get_node("../DeathScreen")
 
 func _physics_process(delta: float) -> void:
 	# Gravité
@@ -51,6 +53,7 @@ func take_damage(amount: int):
 	if hp <= 0:
 		# TODO : Game over
 		print("Game over")
+		death_screen._toggle_death()
 
 # fonctions mouvement caméra à la souris
 
