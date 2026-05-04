@@ -1,9 +1,19 @@
-[gd_scene format=3 uid="uid://hiikrya4hqcm"]
+[gd_scene load_steps=3 format=3 uid="uid://hiikrya4hqcm"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_2mnbh"]
+size = Vector3(0.4, 0.5, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1qhpj"]
+size = Vector3(0.4, 0.5, 0.1)
 
 [node name="Hache" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PrismMesh_2mnbh")
 
 [node name="Hitbox" type="Area3D" parent="."]
+monitoring = false
+monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+shape = SubResource("BoxShape3D_1qhpj")
