@@ -7,7 +7,10 @@
 [node name="Armes" type="Node3D"]
 
 [node name="Baton" parent="." instance=ExtResource("1_pyy3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -0.1, -0.6)
 
 [node name="Hache" parent="." instance=ExtResource("2_6cc0q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, -0.15, -0.45)
 
 [node name="Couteau" parent="." instance=ExtResource("3_sj5b1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.2, -0.4)
