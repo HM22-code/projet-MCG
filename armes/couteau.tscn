@@ -3,3 +3,7 @@
 [node name="Couteau" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="Hitbox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
