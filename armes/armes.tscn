@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://ck0xpaluovotj"]
+
+[ext_resource type="PackedScene" uid="uid://djmits5phwic1" path="res://armes/baton.tscn" id="1_pyy3k"]
+[ext_resource type="PackedScene" uid="uid://hiikrya4hqcm" path="res://armes/hache.tscn" id="2_6cc0q"]
+[ext_resource type="PackedScene" uid="uid://coy6pr8shngt8" path="res://armes/couteau.tscn" id="3_sj5b1"]
+
+[node name="Armes" type="Node3D"]
+
+[node name="Baton" parent="." instance=ExtResource("1_pyy3k")]
+
+[node name="Hache" parent="." instance=ExtResource("2_6cc0q")]
+
+[node name="Couteau" parent="." instance=ExtResource("3_sj5b1")]
