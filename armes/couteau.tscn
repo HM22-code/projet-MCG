@@ -1,9 +1,16 @@
-[gd_scene format=3 uid="uid://coy6pr8shngt8"]
+[gd_scene load_steps=3 format=3 uid="uid://coy6pr8shngt8"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3ryoo"]
+size = Vector3(0.2, 1.5, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xn3mx"]
 
 [node name="Couteau" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_3ryoo")
 
 [node name="Hitbox" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+shape = SubResource("BoxShape3D_xn3mx")
