@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://hiikrya4hqcm"]
+
+[ext_resource type="Script" uid="uid://damx8lr0fwqoa" path="res://armes/hache.gd" id="1_1qhpj"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_2mnbh"]
+size = Vector3(0.4, 0.5, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1qhpj"]
+size = Vector3(0.4, 0.5, 0.1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2mnbh"]
+top_radius = 0.02
+bottom_radius = 0.02
+height = 0.8
+
+[node name="Hache" type="Node3D"]
+script = ExtResource("1_1qhpj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PrismMesh_2mnbh")
+
+[node name="Hitbox" type="Area3D" parent="."]
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+shape = SubResource("BoxShape3D_1qhpj")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
+mesh = SubResource("CylinderMesh_2mnbh")
