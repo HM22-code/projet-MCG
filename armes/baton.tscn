@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://djmits5phwic1"]
+[gd_scene load_steps=6 format=3 uid="uid://djmits5phwic1"]
+
+[ext_resource type="Script" uid="uid://dpnafllspqx0j" path="res://armes/baton.gd" id="1_kyrte"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_oo3eb"]
 top_radius = 0.025
@@ -17,6 +19,7 @@ albedo_color = Color(0.25882354, 0.24313726, 0.54509807, 1)
 emission_enabled = true
 
 [node name="Baton" type="Node3D"]
+script = ExtResource("1_kyrte")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CylinderMesh_oo3eb")
