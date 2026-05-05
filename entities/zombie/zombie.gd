@@ -12,9 +12,10 @@ const ROTATION_SPEED  := 5.0  # vitesse de rotation
 const ATTACK_RANGE    := 1.8  # distance à partir d'où le zombie attaque le joueur
 const ATTACK_DAMAGE   := 10.0 # valeur d'attaque du zombie
 const ACTIVE_RANGE := 50.0    # distance à partir d'où le zombie est actif
+const SCORE_VALUE := 10        # valeur score zombie
 
 # états 
-enum State { IDLE, WANDER, CHASE }
+enum State { IDLE, WANDER, CHASE, DYING }
 var state: State = State.IDLE
 
 # variables
@@ -28,12 +29,14 @@ var current_anim    : String = ""  # animation en cours
 @onready var player: CharacterBody3D = get_tree().get_first_node_in_group("player")
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var anim_state : AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
+@onready var collision_shape: CollisionShape3D = $CollisionShape3D
 
 # fonctions moteurs
 
 func _ready() -> void:
 	await get_tree().process_frame  # attend le process de chaque noeud
 	player = get_tree().get_first_node_in_group("player")
+	add_to_group("zombies")
 	wander_origin = global_position
 	_pick_wander_wait()  # attendre avant balade
 
@@ -71,6 +74,8 @@ func _execute_state(delta: float) -> void:
 			_wander_behaviour(delta)
 		State.CHASE:
 			_chase_behaviour(delta)
+		State.DYING:
+			_dying_behaviour()
 
 ## exécution une fois à l'entrée au changement d'état
 func _enter_state(new_state: State) -> void:
@@ -86,6 +91,8 @@ func _enter_state(new_state: State) -> void:
 			_pick_wander_destination()
 		State.CHASE:
 			anim_state.travel("Running")
+		State.DYING:
+			anim_state.travel("Dying")
 
 # comportement des états
 
@@ -132,7 +139,21 @@ func _chase_behaviour(delta) -> void:
 	velocity = (next_point - global_position).normalized() * SPEED_CHASE
 	_update_rotation_toward_player(delta)
 
+## Comportement lors de l'état Dying
+func _dying_behaviour() -> void:
+	velocity = Vector3.ZERO
+
 # fonctions utiles
+
+## Lance l'état de mort
+func die():
+	collision_shape.disabled = true
+	GameData.add_score(SCORE_VALUE)
+	_enter_state(State.DYING)
+
+## Supprime le zombie à la fin (keyframe) de l'animation Dying
+func delete():
+	queue_free()
 
 ## Inflige des dégats au joueur à l'impact (keyframe) de l'animation Attack
 func deal_damage():

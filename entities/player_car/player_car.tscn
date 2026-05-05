@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dttnnkswxuapw" path="res://blender/car/Voiture.glb" id="2_wmwku"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k5itg"]
-size = Vector3(2, 2, 4)
+size = Vector3(2, 2, 5)
 
 [node name="Player2" type="CharacterBody3D"]
 script = ExtResource("1_k5itg")
