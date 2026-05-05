@@ -1,37 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://djmits5phwic1"]
+[gd_scene load_steps=4 format=3 uid="uid://djmits5phwic1"]
 
 [ext_resource type="Script" uid="uid://dpnafllspqx0j" path="res://armes/baton.gd" id="1_kyrte"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_oo3eb"]
-top_radius = 0.025
-bottom_radius = 0.025
-height = 1.2
+[ext_resource type="PackedScene" uid="uid://dv63hd1b0qij" path="res://blender/armes/Baton.glb" id="2_wv54d"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oo3eb"]
 radius = 0.04
 height = 1.2
 
-[sub_resource type="SphereMesh" id="SphereMesh_kyrte"]
-radius = 0.06
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wv54d"]
-albedo_color = Color(0.25882354, 0.24313726, 0.54509807, 1)
-emission_enabled = true
-
 [node name="Baton" type="Node3D"]
 script = ExtResource("1_kyrte")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CylinderMesh_oo3eb")
 
 [node name="Hitbox" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
 shape = SubResource("CapsuleShape3D_oo3eb")
 
-[node name="BoutBaton" type="Node3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="BoutBaton"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0)
-mesh = SubResource("SphereMesh_kyrte")
-surface_material_override/0 = SubResource("StandardMaterial3D_wv54d")
+[node name="Baton" parent="." instance=ExtResource("2_wv54d")]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 0, 0, 0)
