@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://byfn07skd8226"]
+[gd_scene load_steps=5 format=3 uid="uid://byfn07skd8226"]
 
 [ext_resource type="Script" uid="uid://du50mi5w86ctg" path="res://entities/player_car/player_car.gd" id="1_k5itg"]
 [ext_resource type="PackedScene" uid="uid://dttnnkswxuapw" path="res://blender/car/Voiture.glb" id="2_wmwku"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k5itg"]
 size = Vector3(2, 2, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ounbk"]
+bg_color = Color(1, 0, 0, 1)
 
 [node name="Player2" type="CharacterBody3D"]
 script = ExtResource("1_k5itg")
@@ -24,6 +27,7 @@ offset_left = 14.0
 offset_top = 16.0
 offset_right = 240.0
 offset_bottom = 43.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_ounbk")
 show_percentage = false
 
 [node name="ScoreLabel" type="Label" parent="Camera3D/CanvasLayer"]
