@@ -30,6 +30,122 @@ layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 
+[node name="control" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 549.0
+offset_top = 300.0
+offset_right = 776.0
+offset_bottom = 555.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/control"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="controles" type="Label" parent="Panel/control/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Contrôles"
+horizontal_alignment = 1
+
+[node name="Avancer" type="HBoxContainer" parent="Panel/control"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/control/Avancer"]
+layout_mode = 2
+text = "Avancer / Accélerer"
+
+[node name="Label2" type="Label" parent="Panel/control/Avancer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Z"
+horizontal_alignment = 1
+
+[node name="Reculer" type="HBoxContainer" parent="Panel/control"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/control/Reculer"]
+layout_mode = 2
+theme_override_constants/margin_right = 87
+
+[node name="Label" type="Label" parent="Panel/control/Reculer/MarginContainer"]
+layout_mode = 2
+text = "Reculer"
+
+[node name="Label2" type="Label" parent="Panel/control/Reculer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "S"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/control"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/control/HBoxContainer3"]
+layout_mode = 2
+theme_override_constants/margin_right = 77
+
+[node name="Label" type="Label" parent="Panel/control/HBoxContainer3/MarginContainer"]
+layout_mode = 2
+text = "A gauche"
+
+[node name="Label2" type="Label" parent="Panel/control/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Q"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/control"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/control/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_right = 83
+
+[node name="Label" type="Label" parent="Panel/control/HBoxContainer2/MarginContainer"]
+layout_mode = 2
+text = "A droite"
+
+[node name="Label2" type="Label" parent="Panel/control/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "D"
+horizontal_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Panel/control"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/control/HBoxContainer4"]
+layout_mode = 2
+theme_override_constants/margin_right = 95
+
+[node name="Label" type="Label" parent="Panel/control/HBoxContainer4/MarginContainer"]
+layout_mode = 2
+text = "Parler"
+
+[node name="Label2" type="Label" parent="Panel/control/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "E"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/control"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/control/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 95
+
+[node name="Label" type="Label" parent="Panel/control/HBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "Sauter"
+
+[node name="Label2" type="Label" parent="Panel/control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Espace"
+horizontal_alignment = 1
+
 [node name="TitleLabel" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 48.0
@@ -42,9 +158,9 @@ label_settings = SubResource("LabelSettings_8s8hf")
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 0
 offset_left = 64.0
-offset_top = 358.0
+offset_top = 300.0
 offset_right = 531.0
-offset_bottom = 637.0
+offset_bottom = 579.0
 theme_override_constants/separation = 20
 alignment = 1
 
@@ -55,6 +171,10 @@ text = "Jouer"
 [node name="OptionsButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 text = "Options"
+
+[node name="ControlButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Contrôles"
 
 [node name="QuitButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
@@ -70,11 +190,12 @@ text = "Meilleur score : "
 
 [node name="TestLevel" parent="." instance=ExtResource("3_ml8bw")]
 layout_mode = 1
-offset_left = 817.0
-offset_top = 306.0
+offset_left = 860.0
+offset_top = 303.0
 offset_right = -86.0
 offset_bottom = -28.0
 
 [connection signal="pressed" from="Panel/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/ControlButton" to="." method="_on_control_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://b8alu43mmpxms"]
+[gd_scene load_steps=14 format=3 uid="uid://b8alu43mmpxms"]
 
 [ext_resource type="PackedScene" uid="uid://bayi1q2r2ond4" path="res://entities/zombie/zombie.tscn" id="1_iyx0m"]
 [ext_resource type="PackedScene" uid="uid://b5hm2qiq84uxs" path="res://entities/player/player.tscn" id="2_74lek"]
 [ext_resource type="PackedScene" uid="uid://bsfcuyov1kqm7" path="res://menus/pause_menu/pause_menu.tscn" id="3_j5jx5"]
+[ext_resource type="PackedScene" uid="uid://bdtc2u2wvfwd" path="res://menus/death_menu/death_screen.tscn" id="4_74lek"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mf4mk"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -75,3 +76,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.93903, 1.0715919, -44.554
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0209244, 0)
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_j5jx5")]
+
+[node name="DeathScreen" parent="." instance=ExtResource("4_74lek")]
