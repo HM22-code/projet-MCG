@@ -1,7 +1,10 @@
 extends CanvasLayer
 
+@onready var control_visible = false
+
 func _ready() -> void:
 	$PausePanel.visible = false
+	$PausePanel/control.visible = control_visible
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -31,3 +34,8 @@ func _on_quit_pressed() -> void:
 func _on_main_menu_pressed() -> void:
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://menus/main_menu/main_menu.tscn")
+
+
+func _on_control_button_pressed() -> void: #toggle contrôles
+	control_visible = not control_visible
+	$PausePanel/control.visible = control_visible
