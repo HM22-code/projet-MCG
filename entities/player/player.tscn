@@ -1,12 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5hm2qiq84uxs"]
+[gd_scene load_steps=5 format=3 uid="uid://b5hm2qiq84uxs"]
 
 [ext_resource type="Script" uid="uid://ddvtrssy83qnk" path="res://entities/player/player.gd" id="1_4flbx"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_symyc"]
-albedo_color = Color(0, 0, 1, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
-material = SubResource("StandardMaterial3D_symyc")
+[ext_resource type="PackedScene" uid="uid://cpsxi75u15374" path="res://blender/player/Human_template.glb" id="2_abrql"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4flbx"]
 
@@ -20,9 +15,6 @@ corner_radius_bottom_left = 6
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("CAMERA_CONTROLLER")]
 script = ExtResource("1_4flbx")
 CAMERA_CONTROLLER = NodePath("Camera3D")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_sh265")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_4flbx")
@@ -46,3 +38,6 @@ offset_top = 53.0
 offset_right = 68.0
 offset_bottom = 76.0
 text = "Score :"
+
+[node name="Human_template" parent="." instance=ExtResource("2_abrql")]
+transform = Transform3D(-0.17, 0, -1.4861872e-08, 0, 0.17, 0, 1.4861872e-08, 0, -0.17, 0, 0.4, 0)
