@@ -46,7 +46,8 @@ func _physics_process(delta: float) -> void:
 		if collision:
 			var hit = collision.get_collider()
 			if hit.is_in_group("zombies") and is_front_hit(hit):
-				hit.die()
+				hit.die() #tuer zombie
+				pointer_delai = clamp(pointer_delai - 0.75, 0, DELAI) #ralentir voiture
 				
 
 ## Fonction pour déterminer si la collision est à l'avant de la voiture
