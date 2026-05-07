@@ -1,5 +1,6 @@
-[gd_scene load_steps=31 format=3 uid="uid://diwvpcl4rerak"]
+[gd_scene load_steps=32 format=3 uid="uid://diwvpcl4rerak"]
 
+[ext_resource type="Texture2D" uid="uid://b3vvr1x2rpvpp" path="res://assets/overcast_soil_puresky_4k.exr" id="1_qruyt"]
 [ext_resource type="PackedScene" uid="uid://bayi1q2r2ond4" path="res://entities/zombie/zombie.tscn" id="1_vrt2j"]
 [ext_resource type="MeshLibrary" uid="uid://dm6qp70uydjby" path="res://mesh_library/mesh_library_stage_1_source_detection.tres" id="2_6a362"]
 [ext_resource type="MeshLibrary" uid="uid://wgwr1huw0mvf" path="res://mesh_library/mesh_library_stage_1.tres" id="2_fertp"]
@@ -10,12 +11,11 @@
 [ext_resource type="ArrayMesh" uid="uid://c4vtdjppy70y6" path="res://blender/stage_1/road_segments_rampe_simple_2.res" id="6_qruyt"]
 [ext_resource type="PackedScene" uid="uid://bdtc2u2wvfwd" path="res://menus/death_menu/death_screen.tscn" id="6_rq0lh"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ac5kk"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vrqyo"]
+panorama = ExtResource("1_qruyt")
 
 [sub_resource type="Sky" id="Sky_vrt2j"]
-sky_material = SubResource("ProceduralSkyMaterial_ac5kk")
+sky_material = SubResource("PanoramaSkyMaterial_vrqyo")
 
 [sub_resource type="Environment" id="Environment_usctx"]
 background_mode = 2

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://xnkkbvfp0bre"]
 
 [ext_resource type="Script" uid="uid://cm3e8vpn6476l" path="res://menus/options_menu/options_menu.gd" id="1_hs8o5"]
-[ext_resource type="Texture2D" uid="uid://dywxdh0y7ls3e" path="res://menus/main_menu/S31N.png" id="2_vu5tu"]
+[ext_resource type="Texture2D" uid="uid://dywxdh0y7ls3e" path="res://assets/S31N.png" id="2_vu5tu"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ml8bw"]
 diffuse_texture = ExtResource("2_vu5tu")
