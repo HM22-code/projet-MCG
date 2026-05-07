@@ -1,12 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgsvh3gdhngt2"]
+[gd_scene load_steps=5 format=3 uid="uid://dgsvh3gdhngt2"]
 
 [ext_resource type="Script" uid="uid://m3l26n8x36w0" path="res://entities/food/food.gd" id="1_bw6vg"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fwdp2"]
-albedo_color = Color(0, 1, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_k3rjr"]
-material = SubResource("StandardMaterial3D_fwdp2")
+[ext_resource type="PackedScene" uid="uid://ds1h10bt6ad64" path="res://blender/food/Plateau.glb" id="2_tn4ro"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bw6vg"]
 
@@ -16,12 +11,12 @@ size = Vector3(1.5, 1.5, 1.5)
 [node name="food" type="AnimatableBody3D"]
 script = ExtResource("1_bw6vg")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_k3rjr")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_bw6vg")
 disabled = true
+
+[node name="Plateau" parent="." instance=ExtResource("2_tn4ro")]
+transform = Transform3D(0.17, 0, 0, 0, 0.17, 0, 0, 0, 0.17, 0, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="."]
 
