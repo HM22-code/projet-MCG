@@ -44,6 +44,7 @@ vertex_color_use_as_albedo = true
 material = SubResource("StandardMaterial3D_kpfu8")
 
 [node name="Player2" type="CharacterBody3D"]
+collision_mask = 31
 script = ExtResource("1_kpfu8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

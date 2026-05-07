@@ -137,6 +137,14 @@ charge={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="entities"
+3d_physics/layer_2="ground"
+3d_physics/layer_3="walls"
+3d_physics/layer_4="platforms"
+3d_physics/layer_5="interactions"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
