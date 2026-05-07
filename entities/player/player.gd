@@ -51,8 +51,7 @@ func update_hp_bar():
 func take_damage(amount: int):
 	hp = max(0, hp - amount)
 	if hp <= 0:
-		# TODO : Game over
-		print("Game over")
+		# Game over
 		death_screen._toggle_death()
 
 # fonctions mouvement caméra à la souris

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bkk5ncg8mqs63"]
 
 [ext_resource type="Script" uid="uid://ff7bs358sib5" path="res://ui/dialogue_ui/dialogue_ui.gd" id="1_r8sqs"]
-[ext_resource type="AudioStream" uid="uid://blwpnkqdo82qr" path="res://ui/dialogue_ui/huh.wav" id="2_lfmeu"]
+[ext_resource type="AudioStream" uid="uid://blwpnkqdo82qr" path="res://assets/huh.wav" id="2_lfmeu"]
 
 [sub_resource type="Theme" id="Theme_p6li3"]
 default_font_size = 23

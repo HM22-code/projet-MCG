@@ -561,6 +561,7 @@ size = Vector3(1, 1, 0.3)
 [sub_resource type="BoxShape3D" id="BoxShape3D_hq5pn"]
 
 [node name="Professor" type="AnimatableBody3D"]
+collision_mask = 14
 script = ExtResource("1_botdy")
 
 [node name="Prof" type="Node3D" parent="."]
@@ -815,6 +816,7 @@ libraries = {
 shape = SubResource("CapsuleShape3D_fvg2h")
 
 [node name="Area3D" type="Area3D" parent="."]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_botdy")
