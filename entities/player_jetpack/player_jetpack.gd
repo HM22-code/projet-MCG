@@ -9,7 +9,7 @@ var jetpack_fuel = JETPACK_FUEL_MAX
 var jetpack_active = false
 
 @onready var fuel_bar: ProgressBar = $Camera3D/CanvasLayer/FuelProgressBar
-@onready var gpu_particles_3d: GPUParticles3D = $MeshInstance3D2/GPUParticles3D
+@onready var gpu_particles_3d: GPUParticles3D = $GPUParticles3D
 
 func _physics_process(delta: float) -> void:
 	# Activation du jetpack
