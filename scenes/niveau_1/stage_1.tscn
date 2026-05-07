@@ -87,7 +87,6 @@ shadow_enabled = true
 environment = SubResource("Environment_usctx")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9027405, 0, 1.3332367)
 navigation_mesh = SubResource("NavigationMesh_fertp")
 
 [node name="GridMap" type="GridMap" parent="NavigationRegion3D"]
@@ -233,14 +232,6 @@ mesh = SubResource("BoxMesh_rq0lh")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/other obstacles/o9/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_thldd")
 
-[node name="sol5" type="MeshInstance3D" parent="NavigationRegion3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 643.41284, 0, 21.663174)
-mesh = SubResource("PlaneMesh_rq0lh")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/sol5"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/sol5/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_x6ic4")
 [node name="rampe 27" type="MeshInstance3D" parent="NavigationRegion3D/other obstacles"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 341.6, 0, 53.875)
 visible = false
