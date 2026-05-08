@@ -1,11 +1,11 @@
 [gd_scene load_steps=35 format=3 uid="uid://diwvpcl4rerak"]
 
 [ext_resource type="Texture2D" uid="uid://b3vvr1x2rpvpp" path="res://assets/overcast_soil_puresky_4k.exr" id="1_qruyt"]
-[ext_resource type="PackedScene" uid="uid://bayi1q2r2ond4" path="res://entities/zombie/zombie.tscn" id="1_vrt2j"]
 [ext_resource type="MeshLibrary" uid="uid://dm6qp70uydjby" path="res://mesh_library/mesh_library_stage_1_source_detection.tres" id="2_6a362"]
 [ext_resource type="MeshLibrary" uid="uid://wgwr1huw0mvf" path="res://mesh_library/mesh_library_stage_1.tres" id="2_fertp"]
 [ext_resource type="Script" uid="uid://bhplyu7ul1bxb" path="res://scenes/niveau_1/spawner.gd" id="3_202f3"]
 [ext_resource type="PackedScene" uid="uid://bsfcuyov1kqm7" path="res://menus/pause_menu/pause_menu.tscn" id="5_37lgv"]
+[ext_resource type="PackedScene" uid="uid://ddvkscfeqkqyu" path="res://entities/zombie/zombie_stage_1.tscn" id="5_qruyt"]
 [ext_resource type="PackedScene" uid="uid://byfn07skd8226" path="res://entities/player_car/player_car.tscn" id="5_rq0lh"]
 [ext_resource type="ArrayMesh" uid="uid://bhsjv4k6npjes" path="res://blender/stage_1/road_segments_rampe_simple_1.res" id="5_x6ic4"]
 [ext_resource type="ArrayMesh" uid="uid://c4vtdjppy70y6" path="res://blender/stage_1/road_segments_rampe_simple_2.res" id="6_qruyt"]
@@ -168,7 +168,7 @@ shape = SubResource("ConcavePolygonShape3D_vrqyo")
 
 [node name="spawner" type="Node3D" parent="NavigationRegion3D"]
 script = ExtResource("3_202f3")
-scene_zombie = ExtResource("1_vrt2j")
+scene_zombie = ExtResource("5_qruyt")
 
 [node name="other obstacles" type="Node3D" parent="NavigationRegion3D"]
 

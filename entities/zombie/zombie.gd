@@ -1,10 +1,11 @@
+class_name  Zombie
 extends CharacterBody3D
 
 # propriétés constantes du zombie
 const SPEED_CHASE   := 3.0    # vitesse de poursuite
 const SPEED_WANDER  := 1.2    # vitesse de balade
-const DETECT_RANGE  := 10.0   # distance à partir d'où le zombie poursuit le joueur
-const LOSE_RANGE    := 14.0   # distance à partir d'où le zombie arrête de poursuivre le joueur
+var DETECT_RANGE  := 10.0   # distance à partir d'où le zombie poursuit le joueur
+var LOSE_RANGE    := 14.0   # distance à partir d'où le zombie arrête de poursuivre le joueur
 const WANDER_RADIUS := 6.0    # distance jusqu'où le zombie se balade à partir de son spawn
 const WANDER_WAIT_MIN := 1.5  # secondes minimales où le zombie reste immobile avant de se balader
 const WANDER_WAIT_MAX := 3.5  # secondes maximales où le zombie reste immobile avant de se balader
