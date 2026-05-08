@@ -11,7 +11,7 @@ var ANGLE_ROTATION : float = TAU / 1
 
 func _ready():
 	super._ready() #Player ready
-	SPEED = 1200.0
+	SPEED = 25
 	JUMP_VELOCITY = 0 #Voiture ne peut pas sauter
 	#global_position = Vector3(0, 5, 0)
 	
@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 			pointer_delai = clamp(pointer_delai - delta, 0, DELAI)
 		var delai_factor = delai_func(pointer_delai)
 		
-		speed = SPEED * delai_factor * delta
+		speed = SPEED * delai_factor
 		
 		if last_direction and delai_factor > 0: #ralentissement
 			velocity.x = last_direction.x * speed
@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 			pointer_delai = clamp(pointer_delai - delta, 0, DELAI)
 		var delai_factor = delai_func(pointer_delai)
 		
-		speed = SPEED * delai_factor * delta
+		speed = SPEED * delai_factor
 		
 		# Mouvement horizontal
 		var input_dir := Input.get_vector("gauche", "droite", "haut", "bas")
