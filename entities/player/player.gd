@@ -53,6 +53,8 @@ func take_damage(amount: int):
 	if hp <= 0:
 		# Game over
 		death_screen._toggle_death()
+		GameData.submit_score(GameData.get_score()) #sauvegarder score si le meilleur
+		GameData.init_score() #reset le score
 
 # fonctions mouvement caméra à la souris
 
