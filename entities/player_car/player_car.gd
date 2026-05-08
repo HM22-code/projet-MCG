@@ -13,7 +13,6 @@ func _ready():
 	super._ready() #Player ready
 	SPEED = 22
 	JUMP_VELOCITY = 0 #Voiture ne peut pas sauter
-	global_position = Vector3(550, 5, 23)
 	
 func _physics_process(delta: float) -> void:
 	# TODO : à modifier avec les signaux pour éviter une mis à jour à chaque frame
