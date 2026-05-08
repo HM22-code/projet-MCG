@@ -11,9 +11,9 @@ var ANGLE_ROTATION : float = TAU / 1
 
 func _ready():
 	super._ready() #Player ready
-	SPEED = 25
+	SPEED = 22
 	JUMP_VELOCITY = 0 #Voiture ne peut pas sauter
-	#global_position = Vector3(0, 5, 0)
+	global_position = Vector3(550, 5, 23)
 	
 func _physics_process(delta: float) -> void:
 	# TODO : à modifier avec les signaux pour éviter une mis à jour à chaque frame
@@ -27,10 +27,10 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		if pointer_delai > 0: #ralentir
-			pointer_delai = clamp(pointer_delai - delta, 0, DELAI)
+			pointer_delai = clamp(pointer_delai - (delta / 2), 0, DELAI)
 		var delai_factor = delai_func(pointer_delai)
 		
-		speed = SPEED * delai_factor
+		speed = SPEED * delai_factor #sans delta car appliquer déjà move and slide
 		
 		if last_direction and delai_factor > 0: #ralentissement
 			velocity.x = last_direction.x * speed
@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 			pointer_delai = clamp(pointer_delai - delta, 0, DELAI)
 		var delai_factor = delai_func(pointer_delai)
 		
-		speed = SPEED * delai_factor
+		speed = SPEED * delai_factor #sans delta car appliquer déjà move and slide
 		
 		# Mouvement horizontal
 		var input_dir := Input.get_vector("gauche", "droite", "haut", "bas")
