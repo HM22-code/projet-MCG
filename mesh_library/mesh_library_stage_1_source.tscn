@@ -96,10 +96,10 @@ mesh = ExtResource("3_dfp1g")
 [node name="StaticBody3D" type="StaticBody3D" parent="road_big_curve"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="road_big_curve/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_ufify")
 
 [node name="rampe_et_puit" type="MeshInstance3D" parent="."]
+visible = false
 mesh = ExtResource("4_pjk2i")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="rampe_et_puit"]
