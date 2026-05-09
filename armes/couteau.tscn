@@ -15,3 +15,5 @@ shape = SubResource("BoxShape3D_xn3mx")
 
 [node name="couteau" parent="." instance=ExtResource("2_m4jqk")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
