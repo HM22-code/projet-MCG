@@ -7,11 +7,13 @@ const HP_MAX = 100.0
 var SPEED = 5.0
 var JUMP_VELOCITY = 4.5
 var hp = HP_MAX
+var direction = Vector3.ZERO
 
 @onready var score_label: Label = $Camera3D/CanvasLayer/ScoreLabel
 @onready var hp_bar: ProgressBar = $Camera3D/CanvasLayer/HPProgressBar
 #pour afficher après le mort
 @onready var death_screen = get_node("../DeathScreen")
+
 
 func _physics_process(delta: float) -> void:
 	# Gravité
@@ -26,7 +28,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 	# Mouvement horizontal
 	var input_dir := Input.get_vector("gauche", "droite", "haut", "bas")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
@@ -34,7 +36,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	move_and_slide()
-
 
 ## Mise à jour affichage score
 func update_score_label():

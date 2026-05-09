@@ -10,6 +10,8 @@ var jetpack_active = false
 
 @onready var fuel_bar: ProgressBar = $Camera3D/CanvasLayer/FuelProgressBar
 @onready var gpu_particles_3d: GPUParticles3D = $GPUParticles3D
+@onready var animation_tree: AnimationTree = $AnimationTree
+@onready var state_machine = animation_tree["parameters/playback"]
 
 func _physics_process(delta: float) -> void:
 	# Activation du jetpack
@@ -52,6 +54,22 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	move_and_slide()
+	update_animation(direction)
+
+func update_animation(direction):
+	if not is_on_floor():
+		state_machine.travel("Fall")
+	elif direction != Vector3.ZERO:
+		if Input.is_action_pressed("haut"):
+			state_machine.travel("Running")
+		elif Input.is_action_pressed("bas"):
+			state_machine.travel("RunningBack")
+		elif Input.is_action_pressed("gauche"):
+			state_machine.travel("RunningLeft")
+		elif Input.is_action_pressed("droite"):
+			state_machine.travel("RunningRight")
+	else:
+		state_machine.travel("Idle")
 
 ## Retourne le pourcentage de fuel (énergie) du jetpack
 func get_fuel_percent() -> float:
