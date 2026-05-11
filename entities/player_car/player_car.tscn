@@ -6,8 +6,12 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_k5itg"]
 size = Vector3(2, 2, 5)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ounbk"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wmwku"]
 bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [node name="Player2" type="CharacterBody3D"]
 collision_mask = 15
@@ -24,24 +28,36 @@ shape = SubResource("BoxShape3D_k5itg")
 
 [node name="Voiture" parent="." instance=ExtResource("2_wmwku")]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 2, 3)
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 0.74176025, 0)
+collision_mask = 14
+spring_length = 4.0
+margin = 0.1
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Camera3D"]
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
 
-[node name="HPProgressBar" type="ProgressBar" parent="Camera3D/CanvasLayer"]
+[node name="CanvasLayer" type="CanvasLayer" parent="SpringArm3D/Camera3D"]
+
+[node name="HPProgressBar" type="ProgressBar" parent="SpringArm3D/Camera3D/CanvasLayer"]
 offset_left = 14.0
-offset_top = 16.0
-offset_right = 240.0
-offset_bottom = 43.0
-theme_override_styles/fill = SubResource("StyleBoxFlat_ounbk")
+offset_top = 14.0
+offset_right = 466.0
+offset_bottom = 41.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_wmwku")
 show_percentage = false
 
-[node name="ScoreLabel" type="Label" parent="Camera3D/CanvasLayer"]
-offset_left = 21.0
-offset_top = 56.0
-offset_right = 73.0
-offset_bottom = 79.0
+[node name="FuelProgressBar" type="ProgressBar" parent="SpringArm3D/Camera3D/CanvasLayer"]
+offset_left = 13.0
+offset_top = 53.0
+offset_right = 239.0
+offset_bottom = 80.0
+show_percentage = false
+
+[node name="ScoreLabel" type="Label" parent="SpringArm3D/Camera3D/CanvasLayer"]
+offset_left = 16.0
+offset_top = 88.0
+offset_right = 68.0
+offset_bottom = 111.0
 text = "Score :"
 
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

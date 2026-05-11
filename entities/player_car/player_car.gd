@@ -10,7 +10,7 @@ var espacement_roues : float = 2.5
 var ANGLE_ROTATION : float = TAU / 1
 
 func _ready():
-	super._ready() #Player ready
+	#super._ready() #Player ready
 	SPEED = 22
 	JUMP_VELOCITY = 0 #Voiture ne peut pas sauter
 	
