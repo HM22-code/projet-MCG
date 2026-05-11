@@ -46,9 +46,14 @@ func _physics_process(delta: float) -> void:
 	if not is_instance_valid(player):
 		return
 	# en action si le zombie n'est pas trop éloigné du joueur
-	if global_position.distance_to(player.global_position) > ACTIVE_RANGE:
+	#print("différence axe y: ", abs(global_position.y - player.global_position.y))
+	if global_position.distance_to(player.global_position) > ACTIVE_RANGE or abs(global_position.y - player.global_position.y) > 10:
 		velocity = Vector3.ZERO
 		return
+	
+	#appliquer gravité (dans tous cas):
+	if not is_on_floor():
+		velocity += get_gravity() * delta
 	_update_state()
 	_execute_state(delta)
 	move_and_slide()

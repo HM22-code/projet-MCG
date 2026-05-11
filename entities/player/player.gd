@@ -35,12 +35,15 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED * delta)
 		velocity.z = move_toward(velocity.z, 0, SPEED * delta)
+		
 	move_and_slide()
 	
 	for i:int in get_slide_collision_count() :
 		var c : KinematicCollision3D = get_slide_collision(i)
 		if c.get_collider() is RigidBody3D :
 			c.get_collider().apply_central_impulse(-c.get_normal() * 0.5)
+			
+	
 
 ## Mise à jour affichage score
 func update_score_label():
