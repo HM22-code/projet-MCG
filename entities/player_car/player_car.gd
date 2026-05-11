@@ -60,7 +60,8 @@ func _physics_process(delta: float) -> void:
 		#var angleTemp : float = nouvelle_direction.signed_angle_to(Vector3.UP,Vector3(0,1,0))
 		#transform.basis = transform.basis.rotated(Vector3(0,1,0), angleTemp ) 
 		rotation.y = atan2(-nouvelle_direction.x,-nouvelle_direction.z)
-			
+		last_direction = -transform.basis.z
+		
 	move_and_slide()
 		
 	for i in get_slide_collision_count():
@@ -97,3 +98,7 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 			self.set_collision_mask_value(3, false)
 			print("off")
 	print(body.name)
+	
+func _on_finish_area_entered(body: Node3D):
+	if body.is_in_group("player"):
+		get_tree().change_scene_to_file("res://scenes/niveau_2/stage_2.tscn")

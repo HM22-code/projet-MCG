@@ -44,7 +44,6 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	# en action si le noeud player est présent
 	if not is_instance_valid(player):
-		print("false")
 		return
 	# en action si le zombie n'est pas trop éloigné du joueur
 	#print("différence axe y: ", abs(global_position.y - player.global_position.y))
