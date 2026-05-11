@@ -4,13 +4,13 @@ extends CharacterBody3D
 
 const HP_MAX = 100.0
 
-var SPEED = 5.0 * 60
+var SPEED = 5.0 * 3
 var JUMP_VELOCITY = 4.5
 var hp = HP_MAX
 var direction = Vector3.ZERO
 
-@onready var score_label: Label = $SpringArm3D/Camera3D/CanvasLayer/ScoreLabel
-@onready var hp_bar: ProgressBar = $SpringArm3D/Camera3D/CanvasLayer/HPProgressBar
+@onready var score_label: Label = get_node_or_null("SpringArm3D/Camera3D/CanvasLayer/ScoreLabel")
+@onready var hp_bar: ProgressBar = get_node_or_null("Camera3D/CanvasLayer/HPProgressBar")
 #pour afficher après le mort
 @onready var death_screen = get_node("../DeathScreen")
 
@@ -47,18 +47,20 @@ func _physics_process(delta: float) -> void:
 
 ## Mise à jour affichage score
 func update_score_label():
-		score_label.text = "Score : " + str(GameData.get_score())
-		
+	if score_label:
+		score_label.text = "Score :" + str(GameData.get_score())
 
 ## Mise à jour barre de vie
 func update_hp_bar():
-	if not hp_bar:
+	if hp_bar == null:
 		return
 	hp_bar.value = hp
 
 ## Le joueur prend des dégâts
 func take_damage(amount: int):
+
 	hp = max(0, hp - amount)
+	update_hp_bar()
 	if hp <= 0:
 		# Game over
 		death_screen._toggle_death()
