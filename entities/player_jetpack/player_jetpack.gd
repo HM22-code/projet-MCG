@@ -13,6 +13,8 @@ var jetpack_active = false
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var state_machine = animation_tree["parameters/playback"]
 
+@onready var victory_screen = get_node("../VictoryScreen")
+
 func _physics_process(delta: float) -> void:
 	# Activation du jetpack
 	var using_jetpack = Input.is_action_pressed("saut") and not is_on_floor() and jetpack_fuel > 0
@@ -90,3 +92,10 @@ func update_fuel_bar():
 			style.bg_color = Color.ORANGE
 		else:
 			style.bg_color = Color.RED
+
+
+func _on_fin_du_jeu_body_entered(body: Node3D) -> void:
+	GameData.add_score(GameData.time_to_score())
+	GameData.submit_score(GameData.get_score())
+	GameData.save_data()
+	victory_screen._toggle_death()

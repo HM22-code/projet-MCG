@@ -18,6 +18,7 @@ func _process(delta: float) -> void:
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
+		body.heal_damage(20)
 		if GameData:
 			GameData.add_score(SCORE_VALUE)
 		self.queue_free()

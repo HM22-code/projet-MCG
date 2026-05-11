@@ -68,6 +68,9 @@ func take_damage(amount: int):
 		death_screen._toggle_death()
 		GameData.submit_score(GameData.get_score()) #sauvegarder score si le meilleur
 		GameData.init_score() #reset le score
+		
+func heal_damage(amount: int):
+	hp = min(HP_MAX,hp + amount)
 
 # fonctions mouvement caméra à la souris
 

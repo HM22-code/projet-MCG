@@ -53,6 +53,13 @@ func get_score() -> int:
 	
 func get_time() -> String:
 	return "%02d:%02d" % [int(temps_partie)/60,int(temps_partie)%60]
+	
+func time_to_score() -> int:
+	var timeA : int = 60
+	var scoreA : int = 1000
+	var timeB : int = 600
+	var scoreB : int = 0
+	return max(scoreA + ((int(temps_partie) - timeA)*(scoreB - scoreA))/(timeB-timeA),0)
 
 ## Sauvegarde du score final en fin de partie si le score est plus élévé que le score record
 func submit_score(final_score: int):
