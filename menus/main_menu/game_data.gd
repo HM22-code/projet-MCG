@@ -10,8 +10,13 @@ var volume_effets: int = 100
 var sensibilite: float = 1 # déplacement de la caméra, multiplié avec le déplacement, default = 1
 var luminosite: int = 100
 
+var temps_partie : float = 0
+
 func _ready():
 	load_data()
+	
+func _process(delta : float) -> void :
+	temps_partie += delta
 
 ## Sauvegarde des données du jeu à sauvegarder dans un fichier
 func save_data():
@@ -45,6 +50,9 @@ func add_score(amount: int):
 ## Retourne le score
 func get_score() -> int:
 	return score
+	
+func get_time() -> String:
+	return "%02d:%02d" % [int(temps_partie)/60,int(temps_partie)%60]
 
 ## Sauvegarde du score final en fin de partie si le score est plus élévé que le score record
 func submit_score(final_score: int):

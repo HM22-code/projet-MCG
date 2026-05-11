@@ -40,6 +40,7 @@ func _physics_process(delta: float) -> void:
 	# TODO : à modifier avec les signaux pour éviter une mis à jour à chaque frame
 	update_hp_bar()
 	update_fuel_bar()
+	update_time_label()
 	update_score_label()
 	# Saut
 	if Input.is_action_just_pressed("saut") and is_on_floor():

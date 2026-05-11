@@ -17,6 +17,7 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	# TODO : à modifier avec les signaux pour éviter une mis à jour à chaque frame
 	update_score_label()
+	update_time_label()
 	update_hp_bar()
 	
 	var speed : float
@@ -93,11 +94,11 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.name == "GridMap_detection" :
 		if !self.get_collision_mask_value(3):
 			self.set_collision_mask_value(3, true)
-			print("on")
+			#print("on")
 		elif global_position.y > 0.51:
 			self.set_collision_mask_value(3, false)
-			print("off")
-	print(body.name)
+			#print("off")
+	#print(body.name)
 	
 func _on_finish_area_entered(body: Node3D):
 	if body.is_in_group("player"):
