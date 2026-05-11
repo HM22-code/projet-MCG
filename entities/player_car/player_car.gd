@@ -66,7 +66,7 @@ func _physics_process(delta: float) -> void:
 		
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
-		if collision:
+		if collision and global_position.y >= -5:
 			var hit = collision.get_collider()
 			if hit.is_in_group("zombies") and is_front_hit(hit):
 				hit.die() #tuer zombie
