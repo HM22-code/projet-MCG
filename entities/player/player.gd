@@ -4,13 +4,13 @@ extends CharacterBody3D
 
 const HP_MAX = 100.0
 
-var SPEED = 5.0
+var SPEED = 5.0 * 60
 var JUMP_VELOCITY = 4.5
 var hp = HP_MAX
 var direction = Vector3.ZERO
 
-@onready var score_label: Label = $Camera3D/CanvasLayer/ScoreLabel
-@onready var hp_bar: ProgressBar = $Camera3D/CanvasLayer/HPProgressBar
+@onready var score_label: Label = $SpringArm3D/Camera3D/CanvasLayer/ScoreLabel
+@onready var hp_bar: ProgressBar = $SpringArm3D/Camera3D/CanvasLayer/HPProgressBar
 #pour afficher après le mort
 @onready var death_screen = get_node("../DeathScreen")
 
@@ -30,12 +30,17 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("gauche", "droite", "haut", "bas")
 	direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.x = direction.x * SPEED * delta
+		velocity.z = direction.z * SPEED * delta
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, SPEED * delta)
+		velocity.z = move_toward(velocity.z, 0, SPEED * delta)
 	move_and_slide()
+	
+	for i:int in get_slide_collision_count() :
+		var c : KinematicCollision3D = get_slide_collision(i)
+		if c.get_collider() is RigidBody3D :
+			c.get_collider().apply_central_impulse(-c.get_normal() * 0.5)
 
 ## Mise à jour affichage score
 func update_score_label():

@@ -196,6 +196,5 @@ func get_state_name() -> StringName:
 func is_moving() -> bool:
 	return velocity.length_squared() > 0.01
 
-
-func _on_area_3d_body_exited(body: Node3D) -> void:
+func _on_area_3d_body_exited(_body: Node3D) -> void:
 	self.set_collision_mask_value(3, true)

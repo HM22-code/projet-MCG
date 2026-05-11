@@ -144,6 +144,7 @@ charge={
 3d_physics/layer_3="walls"
 3d_physics/layer_4="platforms"
 3d_physics/layer_5="interactions"
+3d_physics/layer_6="safe area"
 
 [rendering]
 
