@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddbkycpu1erp5"]
+
+[ext_resource type="ArrayMesh" uid="uid://oyyblu7oywfl" path="res://blender/meubles/Chaise_1_Cube.res" id="1_pxeg3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qpmeg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pxeg3"]
+size = Vector3(0.48, 0.451, 0.48)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xta7r"]
+size = Vector3(0.12, 0.56, 0.48)
+
+[node name="chaise" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4135303, 0)
+collision_mask = 15
+mass = 2.5
+physics_material_override = SubResource("PhysicsMaterial_qpmeg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = ExtResource("1_pxeg3")
+skeleton = NodePath("../..")
+
+[node name="siege" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.187, 0)
+shape = SubResource("BoxShape3D_pxeg3")
+
+[node name="dossier" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.245, 0.318, 0)
+shape = SubResource("BoxShape3D_xta7r")
