@@ -63,19 +63,16 @@ data = PackedVector3Array(-0.25, 1, 3, 0.25, 1, 3, -0.25, -1, 3, 0.25, 1, 3, 0.2
 [node name="mesh_library_stage_1_source" type="Node3D"]
 
 [node name="road_left_turn" type="MeshInstance3D" parent="."]
-visible = false
 mesh = ExtResource("1_bfbt7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="road_left_turn"]
 collision_layer = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="road_left_turn/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_dfp1g")
 
 [node name="road_straight" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.339757, 0, 0)
-visible = false
 mesh = ExtResource("2_dfp1g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="road_straight"]
@@ -90,7 +87,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.1, -11.65)
 shape = SubResource("BoxShape3D_a0og4")
 
 [node name="road_big_curve" type="MeshInstance3D" parent="."]
-visible = false
 mesh = ExtResource("3_dfp1g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="road_big_curve"]
@@ -99,7 +95,6 @@ mesh = ExtResource("3_dfp1g")
 shape = SubResource("ConcavePolygonShape3D_ufify")
 
 [node name="rampe_et_puit" type="MeshInstance3D" parent="."]
-visible = false
 mesh = ExtResource("4_pjk2i")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="rampe_et_puit"]

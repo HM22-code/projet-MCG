@@ -34,3 +34,7 @@ func update_animation():
 	if is_running and running_attack_cooldown <= 0:
 		couteau.enable_running_attack()   # bien "couteau" et non "knife"
 		running_attack_cooldown = 0.4
+		
+func _on_finish_area_entered(body: Node3D):
+	if body.is_in_group("player"):
+		get_tree().change_scene_to_file("res://scenes/niveau_3/stage_32.tscn")

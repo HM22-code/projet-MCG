@@ -154,7 +154,7 @@ func _dying_behaviour() -> void:
 
 ## Lance l'état de mort
 func die():
-	collision_shape.disabled = true
+	collision_shape.set_deferred("disabled",true)
 	GameData.add_score(SCORE_VALUE)
 	_enter_state(State.DYING)
 

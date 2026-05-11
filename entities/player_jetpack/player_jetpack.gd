@@ -8,7 +8,7 @@ const JETPACK_FUEL_REGEN = 10.0
 var jetpack_fuel = JETPACK_FUEL_MAX
 var jetpack_active = false
 
-@onready var fuel_bar: ProgressBar = $Camera3D/CanvasLayer/FuelProgressBar
+@onready var fuel_bar: ProgressBar = $SpringArm3D/Camera3D/CanvasLayer/FuelProgressBar
 @onready var gpu_particles_3d: GPUParticles3D = $GPUParticles3D
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var state_machine = animation_tree["parameters/playback"]
@@ -48,11 +48,11 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("gauche", "droite", "haut", "bas")
 	direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.x = direction.x * SPEED * delta
+		velocity.z = direction.z * SPEED * delta
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, SPEED * delta)
+		velocity.z = move_toward(velocity.z, 0, SPEED * delta)
 	
 	move_and_slide()
 	update_animation()
