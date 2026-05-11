@@ -60,9 +60,8 @@ func _physics_process(delta: float) -> void:
 		#var angleTemp : float = nouvelle_direction.signed_angle_to(Vector3.UP,Vector3(0,1,0))
 		#transform.basis = transform.basis.rotated(Vector3(0,1,0), angleTemp ) 
 		rotation.y = atan2(-nouvelle_direction.x,-nouvelle_direction.z)
-		last_direction = -transform.basis.z
-	if not mort:	
-		move_and_slide()
+			
+	move_and_slide()
 		
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
