@@ -47,7 +47,7 @@ func _physics_process(delta: float) -> void:
 		print("false")
 		return
 	# en action si le zombie n'est pas trop éloigné du joueur
-	print("différence axe y: ", abs(global_position.y - player.global_position.y))
+	#print("différence axe y: ", abs(global_position.y - player.global_position.y))
 	if global_position.distance_to(player.global_position) > ACTIVE_RANGE or abs(global_position.y - player.global_position.y) > 10:
 		velocity = Vector3.ZERO
 		return
