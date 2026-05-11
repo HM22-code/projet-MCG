@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://begbfcw0wmnst" path="res://blender/stage_3/mesh_library_stage_3_interior_tiles_rough_4k.png" id="3_hroic"]
 [ext_resource type="Texture2D" uid="uid://btuey882w0el6" path="res://blender/stage_3/mesh_library_stage_3_painted_plaster_wall_nor_gl_4k.png" id="5_2jp0q"]
 [ext_resource type="Texture2D" uid="uid://beua73m4aqyhq" path="res://blender/stage_3/mesh_library_stage_3_painted_plaster_wall_rough_4k.png" id="6_iwubp"]
-[ext_resource type="Shader" uid="uid://cj4owxt4x3ysp" path="res://mesh_library/33.gdshader" id="7_whoyq"]
+[ext_resource type="Shader" path="res://mesh_library/33.gdshader" id="7_whoyq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hihgl"]
 albedo_texture = ExtResource("1_880h2")

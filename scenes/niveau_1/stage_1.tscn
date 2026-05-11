@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://diwvpcl4rerak"]
+[gd_scene load_steps=40 format=3 uid="uid://diwvpcl4rerak"]
 
 [ext_resource type="Texture2D" uid="uid://b3vvr1x2rpvpp" path="res://assets/overcast_soil_puresky_4k.exr" id="1_qruyt"]
 [ext_resource type="MeshLibrary" uid="uid://dm6qp70uydjby" path="res://mesh_library/mesh_library_stage_1_source_detection.tres" id="2_6a362"]
@@ -10,6 +10,11 @@
 [ext_resource type="ArrayMesh" uid="uid://bhsjv4k6npjes" path="res://blender/stage_1/road_segments_rampe_simple_1.res" id="5_x6ic4"]
 [ext_resource type="ArrayMesh" uid="uid://c4vtdjppy70y6" path="res://blender/stage_1/road_segments_rampe_simple_2.res" id="6_qruyt"]
 [ext_resource type="PackedScene" uid="uid://bdtc2u2wvfwd" path="res://menus/death_menu/death_screen.tscn" id="6_rq0lh"]
+[ext_resource type="PackedScene" uid="uid://xjthjnchn0pa" path="res://arbres/tree2.glb" id="8_i2c3t"]
+[ext_resource type="PackedScene" uid="uid://c850sh410pphx" path="res://arbres/tree.glb" id="11_vrqyo"]
+[ext_resource type="PackedScene" uid="uid://boi5ueyohgtsb" path="res://arbres/tree (1).glb" id="12_dn82e"]
+[ext_resource type="PackedScene" uid="uid://vhk4eeht3rvp" path="res://arbres/tree3.glb" id="13_3rd00"]
+[ext_resource type="PackedScene" uid="uid://da3jxayeni685" path="res://arbres/tree5.glb" id="14_3rd00"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vrqyo"]
 panorama = ExtResource("1_qruyt")
@@ -276,9 +281,126 @@ collision_layer = 8
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/other obstacles/rampe 21/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_dn82e")
 
+[node name="AuxScene" parent="NavigationRegion3D" instance=ExtResource("8_i2c3t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.606285, 0, -47.322304)
+
+[node name="AuxScene2" parent="NavigationRegion3D" instance=ExtResource("8_i2c3t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.787231, 0, -49.598564)
+
+[node name="AuxScene3" parent="NavigationRegion3D" instance=ExtResource("14_3rd00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.050407, 0, 55.72232)
+
+[node name="AuxScene4" parent="NavigationRegion3D" instance=ExtResource("14_3rd00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.41045, 0, -45.08846)
+
+[node name="AuxScene5" parent="NavigationRegion3D" instance=ExtResource("14_3rd00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.207985, 0, 32.194183)
+
+[node name="AuxScene6" parent="NavigationRegion3D" instance=ExtResource("14_3rd00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 0, 39)
+
+[node name="AuxScene7" parent="NavigationRegion3D" instance=ExtResource("14_3rd00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -52)
+
+[node name="AuxScene8" parent="NavigationRegion3D" instance=ExtResource("14_3rd00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 32)
+
+[node name="AuxScene9" parent="NavigationRegion3D" instance=ExtResource("14_3rd00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -32)
+
+[node name="AuxScene10" parent="NavigationRegion3D" instance=ExtResource("14_3rd00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 45)
+
+[node name="AuxScene11" parent="NavigationRegion3D" instance=ExtResource("13_3rd00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 30)
+
+[node name="AuxScene12" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85, 0, -44)
+
+[node name="AuxScene13" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99, 0, 58)
+
+[node name="AuxScene14" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 161, 0, 67)
+
+[node name="AuxScene15" parent="NavigationRegion3D" instance=ExtResource("14_3rd00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, 18)
+
+[node name="AuxScene16" parent="NavigationRegion3D" instance=ExtResource("14_3rd00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 37)
+
+[node name="AuxScene17" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 151, 0, -92)
+
+[node name="AuxScene18" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63, 0, -89)
+
+[node name="AuxScene19" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 244, 0, -91)
+
+[node name="AuxScene20" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 206, 0, 81)
+
+[node name="AuxScene21" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 267, 0, -52)
+
+[node name="AuxScene22" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 316, 0, -74)
+
+[node name="AuxScene23" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 403, 0, 78)
+
+[node name="AuxScene24" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 354, 0, -74)
+
+[node name="AuxScene25" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 462, 0, 80)
+
+[node name="AuxScene26" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 519, 0, 60)
+
+[node name="AuxScene27" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 480, 0, -88)
+
+[node name="AuxScene28" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 552, 0, -66)
+
+[node name="AuxScene29" parent="NavigationRegion3D" instance=ExtResource("8_i2c3t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 407, 0, 42)
+
+[node name="AuxScene30" parent="NavigationRegion3D" instance=ExtResource("14_3rd00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 505, 0, -81)
+
 [node name="PauseMenu" parent="." instance=ExtResource("5_37lgv")]
 
 [node name="Player" parent="." instance=ExtResource("5_rq0lh")]
 transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 0, 3, 0)
 
 [node name="DeathScreen" parent="." instance=ExtResource("6_rq0lh")]
+
+[node name="AuxScene" parent="." instance=ExtResource("11_vrqyo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 69.0741)
+
+[node name="AuxScene" parent="AuxScene" instance=ExtResource("12_dn82e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -141.91422)
+
+[node name="AuxScene2" parent="." instance=ExtResource("14_3rd00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.664757, 0, -42.48697)
+
+[node name="AuxScene3" parent="." instance=ExtResource("11_vrqyo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 0, -62)
+
+[node name="AuxScene4" parent="." instance=ExtResource("14_3rd00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41, 0, -76)
+
+[node name="AuxScene5" parent="." instance=ExtResource("14_3rd00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 153, 0, 6)
+
+[node name="AuxScene6" parent="." instance=ExtResource("12_dn82e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126, 0, 27)
+
+[node name="AuxScene7" parent="." instance=ExtResource("12_dn82e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99, 0, -95)
+
+[node name="AuxScene8" parent="." instance=ExtResource("13_3rd00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 553, 0, 72)
