@@ -13,7 +13,6 @@ var direction = Vector3.ZERO
 @onready var hp_bar: ProgressBar = $SpringArm3D/Camera3D/CanvasLayer/HPProgressBar
 #pour afficher après le mort
 @onready var death_screen = get_node("../DeathScreen")
-@onready var mort = false
 
 
 func _physics_process(delta: float) -> void:
@@ -37,8 +36,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED * delta)
 		velocity.z = move_toward(velocity.z, 0, SPEED * delta)
 		
-	if not mort:
-		move_and_slide()
+	move_and_slide()
 	
 	for i:int in get_slide_collision_count() :
 		var c : KinematicCollision3D = get_slide_collision(i)
@@ -63,7 +61,6 @@ func take_damage(amount: int):
 	hp = max(0, hp - amount)
 	if hp <= 0:
 		# Game over
-		mort = true
 		death_screen._toggle_death()
 		GameData.submit_score(GameData.get_score()) #sauvegarder score si le meilleur
 		GameData.init_score() #reset le score

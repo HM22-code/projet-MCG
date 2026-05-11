@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://diwvpcl4rerak"]
+[gd_scene load_steps=44 format=3 uid="uid://diwvpcl4rerak"]
 
 [ext_resource type="Texture2D" uid="uid://b3vvr1x2rpvpp" path="res://assets/overcast_soil_puresky_4k.exr" id="1_qruyt"]
 [ext_resource type="MeshLibrary" uid="uid://dm6qp70uydjby" path="res://mesh_library/mesh_library_stage_1_source_detection.tres" id="2_6a362"]
@@ -91,6 +91,19 @@ points = PackedVector3Array(3, 0, 0, 3, 3, -24.000294, 0, 0, 0, 3, 0, -27, 0, 3,
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dn82e"]
 points = PackedVector3Array(3, 0, -0.0020542145, 3, 3, -18.000881, 0, 0, -0.0020542145, 3, 0, -21, 0, 3, -18.000881, 3, 3, -21, 0, 0, -21, 0, 3, -21)
 
+[sub_resource type="BoxMesh" id="BoxMesh_kyyys"]
+size = Vector3(1, 4, 12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kyyys"]
+albedo_color = Color(1, 0, 0, 1)
+metallic = 0.37
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_66xc6"]
+data = PackedVector3Array(-0.5, 2, 6, 0.5, 2, 6, -0.5, -2, 6, 0.5, 2, 6, 0.5, -2, 6, -0.5, -2, 6, 0.5, 2, -6, -0.5, 2, -6, 0.5, -2, -6, -0.5, 2, -6, -0.5, -2, -6, 0.5, -2, -6, 0.5, 2, 6, 0.5, 2, -6, 0.5, -2, 6, 0.5, 2, -6, 0.5, -2, -6, 0.5, -2, 6, -0.5, 2, -6, -0.5, 2, 6, -0.5, -2, -6, -0.5, 2, 6, -0.5, -2, 6, -0.5, -2, -6, 0.5, 2, 6, -0.5, 2, 6, 0.5, 2, -6, -0.5, 2, 6, -0.5, 2, -6, 0.5, 2, -6, -0.5, -2, 6, 0.5, -2, 6, -0.5, -2, -6, 0.5, -2, 6, 0.5, -2, -6, -0.5, -2, -6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s2moo"]
+size = Vector3(20, 2, 12)
+
 [node name="stage 1" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -109,9 +122,9 @@ cell_size = Vector3(0.25, 0.2, 0.25)
 cell_center_y = false
 collision_layer = 4
 data = {
-"cells": PackedInt32Array(200, 65442, 655360, 317, 65402, 1048577, 387, 65402, 0, 507, 65332, 1, 547, 65332, 1, 587, 65332, 1, 627, 65332, 1, 667, 65332, 1, 707, 65332, 1, 747, 65332, 1, 747, 65285, 655361, 787, 65285, 655361, 827, 65402, 1441792, 897, 65442, 1441793, 897, 65482, 1441793, 897, 65522, 1441793, 897, 106, 1441793, 897, 146, 1441793, 944, 146, 1048577, 1014, 186, 1048576, 1054, 303, 1, 1094, 303, 1, 1134, 303, 1, 1174, 303, 1, 1214, 303, 1, 1254, 303, 1, 1294, 303, 1, 1294, 186, 655360, 1411, 146, 1048577, 1411, 106, 1048577, 2626, 62, 655361, 2666, 62, 655361, 2706, 62, 655361, -259588, 71, 655364, -259588, 81, 655364, -259586, 87, 655364, -259586, 96, 655364, -259584, 103, 655364, 492, 65317, 1441798, 927, 98, 655366, 2147, 97, 1441798, 196876, 65533, 655364, 196886, 65379, 655364, 196888, 65373, 655364, 196890, 65368, 655364, 197186, 65288, 655364, 197191, 65290, 655364, 197195, 65293, 655364, 197200, 65297, 655364, 197204, 65301, 655364, 197208, 65305, 655364, 197212, 65309, 655364, 197216, 65314, 655364, 197220, 65318, 655364, 197223, 65323, 655364, 197228, 65327, 655364, 197389, 65322, 655364, 197396, 65323, 655364, 197402, 65324, 655364, 197409, 65325, 655364, 197416, 65326, 655364, 197424, 65327, 655364, 197431, 65327, 655364, 197439, 65327, 655364, 197511, 198, 655364, 197512, 208, 655364, 197515, 203, 655364, 197515, 215, 655364, 197516, 7, 655364, 197516, 193, 655364, 197517, 223, 655364, 197518, 210, 655364, 197520, 218, 655364, 197523, 225, 655364, 197527, 7, 655364, 197537, 7, 655364, 197546, 7, 655364, 198950, 106, 1441796, 197025, 65327, 1441796, 197638, 260, 1441796, 197643, 264, 1441796, 197648, 268, 1441796, 197643, 292, 1441796, 197641, 296, 1441796, 197646, 296, 1441796, 197696, 276, 1441796, 197699, 259, 1441796, 197703, 260, 1441796, 197707, 261, 1441796, 197763, 300, 1441796, 197766, 296, 1441796, 197771, 296, 1441796, 197769, 291, 1441796, 197774, 291, 1441796, 197772, 287, 1441796, 197803, 299, 1441796, 197813, 289, 1441796, 197835, 259, 1441796, 197840, 259, 1441796, 197839, 280, 1441796, 197848, 283, 1441796, 197859, 285, 1441796, 197875, 285, 1441796, 197888, 282, 1441796, 197995, 251, 1441796, 197992, 255, 1441796, 197988, 259, 1441796, 197972, 27, 1441796, 197973, 41, 1441796, 198000, 42, 1441796, 198004, 51, 1441796, 198008, 60, 1441796, 197956, 65448, 1441796, 197977, 65431, 1441796, 1639992, 65314, 1441796, 1639992, 65321, 1441796, 1639998, 65314, 1441796, 1639998, 65321, 1441796, 1640004, 65313, 1441796, 1640004, 65320, 1441796, 1640010, 65313, 1441796, 1640010, 65320, 1441796, 1640016, 65312, 1441796, 1640016, 65319, 1441796, 1640022, 65312, 1441796, 1640022, 65319, 1441796, 198078, 65455, 1441796, 198107, 65443, 1441796, 198139, 65434, 1441796, 198169, 65432, 1441796, 198205, 65433, 1441796, 198938, 97, 1441796, 198931, 74, 1441796, 198919, 65, 1441796, 1312956, 103, 1441796, 1312935, 103, 1441796, 1312956, 69, 1441796, 1312935, 69, 1441796, 427, 65332, 1, 467, 65332, 1, 459152, 65326, 1441801, 459210, 65294, 1441801, 460111, 65440, 1441801, 459801, 270, 655369, 459848, 289, 655369, 459895, 270, 655369, 459927, 270, 655369, 263344, 295, 655368, 197490, 65463, 1441797, 197534, 65311, 1441797, 197562, 28, 1441797, 197726, 317, 1441797, 197949, 114, 1441797, 197977, 65408, 1441797, 198037, 175, 1441797, 328604, 65415, 1441803, 328594, 38, 655372, 328609, 38, 655372, 197913, 273, 655364, 197923, 278, 655364, 197935, 282, 655364, 196892, 65450, 655364, 197976, 228, 655364, 198499, 65461, 655364, 198510, 65455, 655364, 198520, 65465, 655364, 198747, 67, 655365, 198747, 103, 655365, 1640029, 65350, 655364, 1640037, 65351, 655364, 1640046, 65352, 655364, 198263, 65353, 655365, 1513, 65366, 1441802, 1364, 106, 1441794, 2586, 62, 655361, 2560, 62, 655361, 163, 65512, 655361, 123, 65512, 655361, 84, 65512, 655361, 44, 65512, 655361, 5, 65512, 655361, 65501, 65512, 655361, 944, 65521, 1048577, 944, 25, 1048577, 944, 51, 1048577, 2147, 62, 1441798, 2100, 62, 655361, 2140, 62, 655361, 2194, 109, 1, 2255, 62, 655361, 2294, 62, 655361, 2374, 62, 655361, 2371, 62, 655363, 2335, 104, 655368, 2336, 75, 655369, 2375, 109, 1, 2560, 109, 1, 133441, 105, 4, 133445, 68, 4, 133440, 69, 4, 133446, 105, 4, 133434, 105, 4, 133436, 72, 4, 264052, 45, 4, 264049, 51, 4, 264050, 56, 4, 264030, 66, 4, 264040, 60, 4, 264042, 57, 4, 264042, 56, 4, 264045, 61, 4, 264041, 65, 4, 264058, 56, 4, 264052, 61, 4, 264054, 54, 4, -3536409, 109, 4, -3536570, 88, 4, -3536572, 85, 4, -3536574, 82, 4, -3536573, 81, 4, -3536571, 79, 4, -3536489, 63, 4, -3536489, 62, 4, -3536490, 60, 4, -3536491, 59, 4, -3536494, 58, 4, -3536497, 56, 4, -3536503, 55, 4, -3536506, 56, 4, -3536507, 57, 4, -3536511, 59, 4, -3536512, 61, 4, -3536514, 62, 4, -3536514, 63, 4, -3536569, 66, 4, -3536571, 66, 4, -3536575, 66, 4, -3536577, 66, 4, -3536575, 69, 4, -3536571, 71, 4, -3536480, 73, 4, -3536480, 76, 4, -3536477, 85, 4, -3536477, 89, 4, -3536477, 94, 4, -3536476, 97, 4, -3536540, 107, 4, -3536538, 81, 4, -3536528, 72, 4, -3536527, 74, 4, -3536526, 75, 4, -3536524, 100, 4, -3536523, 100, 4, -3536522, 101, 4, -3536504, 100, 4, -3536503, 81, 4, -3536557, 78, 4, -3536556, 98, 4, -3536557, 99, 4, -3536557, 106, 4, -3536557, 105, 4, -3536557, 104, 4, -3536547, 75, 4, -3536545, 84, 4, -3536417, 65, 4, -3536411, 78, 4, -3536411, 79, 4, -3536412, 80, 4, -3536414, 102, 4, -3536415, 103, 4, -3536423, 106, 4, -3536423, 105, 4, -3536425, 93, 4, -3536425, 92, 4, -3536425, 91, 4, -3536424, 91, 4, -3536426, 72, 4, -3536427, 72, 4, -3536435, 70, 4, -3536436, 71, 4, -3536437, 78, 4, -3536436, 80, 4, -3536436, 82, 4, -3536436, 83, 4, -3536436, 90, 4, -3536436, 91, 4, -3536453, 66, 4, -3536461, 89, 4, -3536461, 90, 4, -3536464, 101, 4, -3536454, 81, 4)
+"cells": PackedInt32Array(200, 65442, 655360, 317, 65402, 1048577, 387, 65402, 0, 507, 65332, 1, 547, 65332, 1, 587, 65332, 1, 627, 65332, 1, 667, 65332, 1, 707, 65332, 1, 747, 65332, 1, 747, 65285, 655361, 787, 65285, 655361, 827, 65402, 1441792, 897, 65442, 1441793, 897, 65482, 1441793, 897, 65522, 1441793, 897, 106, 1441793, 897, 146, 1441793, 944, 146, 1048577, 1014, 186, 1048576, 1054, 303, 1, 1094, 303, 1, 1134, 303, 1, 1174, 303, 1, 1214, 303, 1, 1254, 303, 1, 1294, 303, 1, 1294, 186, 655360, 1411, 146, 1048577, 1411, 106, 1048577, 2626, 62, 655361, 2666, 62, 655361, 2706, 62, 655361, -259588, 71, 655364, -259588, 81, 655364, -259586, 87, 655364, -259586, 96, 655364, -259584, 103, 655364, 492, 65317, 1441798, 927, 98, 655366, 2147, 97, 1441798, 196876, 65533, 655364, 196886, 65379, 655364, 196888, 65373, 655364, 196890, 65368, 655364, 197186, 65288, 655364, 197191, 65290, 655364, 197195, 65293, 655364, 197200, 65297, 655364, 197204, 65301, 655364, 197208, 65305, 655364, 197212, 65309, 655364, 197216, 65314, 655364, 197220, 65318, 655364, 197223, 65323, 655364, 197228, 65327, 655364, 197389, 65322, 655364, 197396, 65323, 655364, 197402, 65324, 655364, 197409, 65325, 655364, 197416, 65326, 655364, 197424, 65327, 655364, 197431, 65327, 655364, 197439, 65327, 655364, 197511, 198, 655364, 197512, 208, 655364, 197515, 203, 655364, 197515, 215, 655364, 197516, 7, 655364, 197516, 193, 655364, 197517, 223, 655364, 197518, 210, 655364, 197520, 218, 655364, 197523, 225, 655364, 197527, 7, 655364, 197537, 7, 655364, 197546, 7, 655364, 198950, 106, 1441796, 197025, 65327, 1441796, 197638, 260, 1441796, 197643, 264, 1441796, 197648, 268, 1441796, 197643, 292, 1441796, 197641, 296, 1441796, 197646, 296, 1441796, 197696, 276, 1441796, 197699, 259, 1441796, 197703, 260, 1441796, 197707, 261, 1441796, 197763, 300, 1441796, 197766, 296, 1441796, 197771, 296, 1441796, 197769, 291, 1441796, 197774, 291, 1441796, 197772, 287, 1441796, 197803, 299, 1441796, 197813, 289, 1441796, 197835, 259, 1441796, 197840, 259, 1441796, 197839, 280, 1441796, 197848, 283, 1441796, 197859, 285, 1441796, 197875, 285, 1441796, 197888, 282, 1441796, 197995, 251, 1441796, 197992, 255, 1441796, 197988, 259, 1441796, 197972, 27, 1441796, 197973, 41, 1441796, 198000, 42, 1441796, 198004, 51, 1441796, 198008, 60, 1441796, 197956, 65448, 1441796, 197977, 65431, 1441796, 1639992, 65314, 1441796, 1639992, 65321, 1441796, 1639998, 65314, 1441796, 1639998, 65321, 1441796, 1640004, 65313, 1441796, 1640004, 65320, 1441796, 1640010, 65313, 1441796, 1640010, 65320, 1441796, 1640016, 65312, 1441796, 1640016, 65319, 1441796, 1640022, 65312, 1441796, 1640022, 65319, 1441796, 198078, 65455, 1441796, 198107, 65443, 1441796, 198139, 65434, 1441796, 198169, 65432, 1441796, 198205, 65433, 1441796, 198938, 97, 1441796, 198931, 74, 1441796, 198919, 65, 1441796, 1312956, 103, 1441796, 1312935, 103, 1441796, 1312956, 69, 1441796, 1312935, 69, 1441796, 427, 65332, 1, 467, 65332, 1, 459152, 65326, 1441801, 459210, 65294, 1441801, 460111, 65440, 1441801, 459801, 270, 655369, 459848, 289, 655369, 459895, 270, 655369, 459927, 270, 655369, 263344, 295, 655368, 197490, 65463, 1441797, 197534, 65311, 1441797, 197562, 28, 1441797, 197726, 317, 1441797, 197949, 114, 1441797, 197977, 65408, 1441797, 198037, 175, 1441797, 328604, 65415, 1441803, 328594, 38, 655372, 328609, 38, 655372, 197913, 273, 655364, 197923, 278, 655364, 197935, 282, 655364, 196892, 65450, 655364, 197976, 228, 655364, 198499, 65461, 655364, 198510, 65455, 655364, 198520, 65465, 655364, 198747, 67, 655365, 198747, 103, 655365, 1640029, 65350, 655364, 1640037, 65351, 655364, 1640046, 65352, 655364, 198263, 65353, 655365, 1513, 65366, 1441802, 1364, 106, 1441794, 2586, 62, 655361, 2560, 62, 655361, 163, 65512, 655361, 123, 65512, 655361, 84, 65512, 655361, 44, 65512, 655361, 65501, 65512, 655361, 944, 65521, 1048577, 944, 25, 1048577, 944, 51, 1048577, 2147, 62, 1441798, 2100, 62, 655361, 2140, 62, 655361, 2194, 109, 1, 2255, 62, 655361, 2294, 62, 655361, 2374, 62, 655361, 2371, 62, 655363, 2335, 104, 655368, 2336, 75, 655369, 2375, 109, 1, 2560, 109, 1, 133441, 105, 4, 133445, 68, 4, 133440, 69, 4, 133446, 105, 4, 133434, 105, 4, 133436, 72, 4, 264052, 45, 4, 264049, 51, 4, 264050, 56, 4, 264030, 66, 4, 264040, 60, 4, 264042, 57, 4, 264042, 56, 4, 264045, 61, 4, 264041, 65, 4, 264058, 56, 4, 264052, 61, 4, 264054, 54, 4, -3536409, 109, 4, -3536570, 88, 4, -3536572, 85, 4, -3536574, 82, 4, -3536573, 81, 4, -3536571, 79, 4, -3536489, 63, 4, -3536489, 62, 4, -3536490, 60, 4, -3536491, 59, 4, -3536494, 58, 4, -3536497, 56, 4, -3536503, 55, 4, -3536506, 56, 4, -3536507, 57, 4, -3536511, 59, 4, -3536512, 61, 4, -3536514, 62, 4, -3536514, 63, 4, -3536569, 66, 4, -3536571, 66, 4, -3536575, 66, 4, -3536577, 66, 4, -3536575, 69, 4, -3536571, 71, 4, -3536480, 73, 4, -3536480, 76, 4, -3536477, 85, 4, -3536477, 89, 4, -3536477, 94, 4, -3536476, 97, 4, -3536540, 107, 4, -3536538, 81, 4, -3536528, 72, 4, -3536527, 74, 4, -3536526, 75, 4, -3536524, 100, 4, -3536523, 100, 4, -3536522, 101, 4, -3536504, 100, 4, -3536503, 81, 4, -3536557, 78, 4, -3536556, 98, 4, -3536557, 99, 4, -3536557, 106, 4, -3536557, 105, 4, -3536557, 104, 4, -3536547, 75, 4, -3536545, 84, 4, -3536417, 65, 4, -3536411, 78, 4, -3536411, 79, 4, -3536412, 80, 4, -3536414, 102, 4, -3536415, 103, 4, -3536423, 106, 4, -3536423, 105, 4, -3536425, 93, 4, -3536425, 92, 4, -3536425, 91, 4, -3536424, 91, 4, -3536426, 72, 4, -3536427, 72, 4, -3536435, 70, 4, -3536436, 71, 4, -3536437, 78, 4, -3536436, 80, 4, -3536436, 82, 4, -3536436, 83, 4, -3536436, 90, 4, -3536436, 91, 4, -3536453, 66, 4, -3536461, 89, 4, -3536461, 90, 4, -3536464, 101, 4, -3536454, 81, 4, 5, 65512, 655361)
 }
-metadata/_editor_floor_ = Vector3(0, -54, 0)
+metadata/_editor_floor_ = Vector3(0, -3, 0)
 metadata/_edit_group_ = true
 
 [node name="GridMap_detection" type="GridMap" parent="NavigationRegion3D"]
@@ -280,95 +293,141 @@ collision_layer = 8
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/other obstacles/rampe 21/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_dn82e")
 
-[node name="AuxScene" parent="NavigationRegion3D" instance=ExtResource("8_i2c3t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.606285, 0, -47.322304)
+[node name="fin_niveau" type="MeshInstance3D" parent="NavigationRegion3D/other obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 683.638, 1.873, 21.503)
+mesh = SubResource("BoxMesh_kyyys")
+surface_material_override/0 = SubResource("StandardMaterial3D_kyyys")
 
-[node name="AuxScene2" parent="NavigationRegion3D" instance=ExtResource("8_i2c3t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.787231, 0, -49.598564)
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/other obstacles/fin_niveau"]
 
-[node name="AuxScene3" parent="NavigationRegion3D" instance=ExtResource("14_3rd00")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.050407, 0, 55.72232)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/other obstacles/fin_niveau/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_66xc6")
 
-[node name="AuxScene4" parent="NavigationRegion3D" instance=ExtResource("14_3rd00")]
+[node name="arbres" type="Node3D" parent="NavigationRegion3D"]
+
+[node name="AuxScene32" parent="NavigationRegion3D/arbres" instance=ExtResource("14_3rd00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.664757, 0, -42.48697)
+
+[node name="AuxScene33" parent="NavigationRegion3D/arbres" instance=ExtResource("11_vrqyo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 0, -62)
+
+[node name="AuxScene34" parent="NavigationRegion3D/arbres" instance=ExtResource("14_3rd00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41, 0, -76)
+
+[node name="AuxScene35" parent="NavigationRegion3D/arbres" instance=ExtResource("14_3rd00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 153, 0, 6)
+
+[node name="AuxScene36" parent="NavigationRegion3D/arbres" instance=ExtResource("12_dn82e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126, 0, 27)
+
+[node name="AuxScene37" parent="NavigationRegion3D/arbres" instance=ExtResource("12_dn82e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99, 0, -95)
+
+[node name="AuxScene38" parent="NavigationRegion3D/arbres" instance=ExtResource("13_3rd00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 553, 0, 72)
+
+[node name="AuxScene31" parent="NavigationRegion3D/arbres" instance=ExtResource("11_vrqyo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 69.0741)
+
+[node name="AuxScene" parent="NavigationRegion3D/arbres/AuxScene31" instance=ExtResource("12_dn82e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -141.91422)
+
+[node name="AuxScene4" parent="NavigationRegion3D/arbres" instance=ExtResource("14_3rd00")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.41045, 0, -45.08846)
 
-[node name="AuxScene5" parent="NavigationRegion3D" instance=ExtResource("14_3rd00")]
+[node name="AuxScene5" parent="NavigationRegion3D/arbres" instance=ExtResource("14_3rd00")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.207985, 0, 32.194183)
 
-[node name="AuxScene6" parent="NavigationRegion3D" instance=ExtResource("14_3rd00")]
+[node name="AuxScene6" parent="NavigationRegion3D/arbres" instance=ExtResource("14_3rd00")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 0, 39)
 
-[node name="AuxScene7" parent="NavigationRegion3D" instance=ExtResource("14_3rd00")]
+[node name="AuxScene7" parent="NavigationRegion3D/arbres" instance=ExtResource("14_3rd00")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -52)
 
-[node name="AuxScene8" parent="NavigationRegion3D" instance=ExtResource("14_3rd00")]
+[node name="AuxScene8" parent="NavigationRegion3D/arbres" instance=ExtResource("14_3rd00")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 32)
 
-[node name="AuxScene9" parent="NavigationRegion3D" instance=ExtResource("14_3rd00")]
+[node name="AuxScene9" parent="NavigationRegion3D/arbres" instance=ExtResource("14_3rd00")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -32)
 
-[node name="AuxScene10" parent="NavigationRegion3D" instance=ExtResource("14_3rd00")]
+[node name="AuxScene10" parent="NavigationRegion3D/arbres" instance=ExtResource("14_3rd00")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 45)
 
-[node name="AuxScene11" parent="NavigationRegion3D" instance=ExtResource("13_3rd00")]
+[node name="AuxScene11" parent="NavigationRegion3D/arbres" instance=ExtResource("13_3rd00")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 30)
 
-[node name="AuxScene12" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+[node name="AuxScene12" parent="NavigationRegion3D/arbres" instance=ExtResource("12_dn82e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85, 0, -44)
 
-[node name="AuxScene13" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+[node name="AuxScene13" parent="NavigationRegion3D/arbres" instance=ExtResource("12_dn82e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99, 0, 58)
 
-[node name="AuxScene14" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+[node name="AuxScene14" parent="NavigationRegion3D/arbres" instance=ExtResource("12_dn82e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 161, 0, 67)
 
-[node name="AuxScene15" parent="NavigationRegion3D" instance=ExtResource("14_3rd00")]
+[node name="AuxScene15" parent="NavigationRegion3D/arbres" instance=ExtResource("14_3rd00")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, 18)
 
-[node name="AuxScene16" parent="NavigationRegion3D" instance=ExtResource("14_3rd00")]
+[node name="AuxScene16" parent="NavigationRegion3D/arbres" instance=ExtResource("14_3rd00")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 37)
 
-[node name="AuxScene17" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+[node name="AuxScene17" parent="NavigationRegion3D/arbres" instance=ExtResource("12_dn82e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 151, 0, -92)
 
-[node name="AuxScene18" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+[node name="AuxScene18" parent="NavigationRegion3D/arbres" instance=ExtResource("12_dn82e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63, 0, -89)
 
-[node name="AuxScene19" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+[node name="AuxScene19" parent="NavigationRegion3D/arbres" instance=ExtResource("12_dn82e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 244, 0, -91)
 
-[node name="AuxScene20" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+[node name="AuxScene20" parent="NavigationRegion3D/arbres" instance=ExtResource("12_dn82e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 206, 0, 81)
 
-[node name="AuxScene21" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+[node name="AuxScene21" parent="NavigationRegion3D/arbres" instance=ExtResource("12_dn82e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 267, 0, -52)
 
-[node name="AuxScene22" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+[node name="AuxScene22" parent="NavigationRegion3D/arbres" instance=ExtResource("12_dn82e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 316, 0, -74)
 
-[node name="AuxScene23" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+[node name="AuxScene23" parent="NavigationRegion3D/arbres" instance=ExtResource("12_dn82e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 403, 0, 78)
 
-[node name="AuxScene24" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+[node name="AuxScene24" parent="NavigationRegion3D/arbres" instance=ExtResource("12_dn82e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 354, 0, -74)
 
-[node name="AuxScene25" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+[node name="AuxScene25" parent="NavigationRegion3D/arbres" instance=ExtResource("12_dn82e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 462, 0, 80)
 
-[node name="AuxScene26" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+[node name="AuxScene26" parent="NavigationRegion3D/arbres" instance=ExtResource("12_dn82e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 519, 0, 60)
 
-[node name="AuxScene27" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+[node name="AuxScene27" parent="NavigationRegion3D/arbres" instance=ExtResource("12_dn82e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 480, 0, -88)
 
-[node name="AuxScene28" parent="NavigationRegion3D" instance=ExtResource("12_dn82e")]
+[node name="AuxScene28" parent="NavigationRegion3D/arbres" instance=ExtResource("12_dn82e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 552, 0, -66)
 
-[node name="AuxScene29" parent="NavigationRegion3D" instance=ExtResource("8_i2c3t")]
+[node name="AuxScene29" parent="NavigationRegion3D/arbres" instance=ExtResource("8_i2c3t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 407, 0, 42)
 
-[node name="AuxScene30" parent="NavigationRegion3D" instance=ExtResource("14_3rd00")]
+[node name="AuxScene30" parent="NavigationRegion3D/arbres" instance=ExtResource("14_3rd00")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 505, 0, -81)
+
+[node name="AuxScene3" parent="NavigationRegion3D/arbres" instance=ExtResource("14_3rd00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.050407, 0, 55.72232)
+
+[node name="AuxScene" parent="NavigationRegion3D/arbres" instance=ExtResource("8_i2c3t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.606285, 0, -47.322304)
+
+[node name="AuxScene2" parent="NavigationRegion3D/arbres" instance=ExtResource("8_i2c3t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.787231, 0, -49.598564)
+
+[node name="Area3D" type="Area3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 678.0033, 0, 22.011923)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.459839, 0, 0)
+shape = SubResource("BoxShape3D_s2moo")
 
 [node name="PauseMenu" parent="." instance=ExtResource("5_37lgv")]
 
@@ -377,29 +436,4 @@ transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-
 
 [node name="DeathScreen" parent="." instance=ExtResource("6_rq0lh")]
 
-[node name="AuxScene" parent="." instance=ExtResource("11_vrqyo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 69.0741)
-
-[node name="AuxScene" parent="AuxScene" instance=ExtResource("12_dn82e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -141.91422)
-
-[node name="AuxScene2" parent="." instance=ExtResource("14_3rd00")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.664757, 0, -42.48697)
-
-[node name="AuxScene3" parent="." instance=ExtResource("11_vrqyo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 0, -62)
-
-[node name="AuxScene4" parent="." instance=ExtResource("14_3rd00")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41, 0, -76)
-
-[node name="AuxScene5" parent="." instance=ExtResource("14_3rd00")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 153, 0, 6)
-
-[node name="AuxScene6" parent="." instance=ExtResource("12_dn82e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126, 0, 27)
-
-[node name="AuxScene7" parent="." instance=ExtResource("12_dn82e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99, 0, -95)
-
-[node name="AuxScene8" parent="." instance=ExtResource("13_3rd00")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 553, 0, 72)
+[connection signal="body_entered" from="NavigationRegion3D/Area3D" to="Player" method="_on_finish_area_entered"]

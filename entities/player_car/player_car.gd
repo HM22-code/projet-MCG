@@ -10,7 +10,7 @@ var espacement_roues : float = 2.5
 var ANGLE_ROTATION : float = TAU / 1
 
 func _ready():
-	#super._ready() #Player ready
+	super._ready() #Player ready
 	SPEED = 22
 	JUMP_VELOCITY = 0 #Voiture ne peut pas sauter
 	
@@ -61,8 +61,8 @@ func _physics_process(delta: float) -> void:
 		#transform.basis = transform.basis.rotated(Vector3(0,1,0), angleTemp ) 
 		rotation.y = atan2(-nouvelle_direction.x,-nouvelle_direction.z)
 		last_direction = -transform.basis.z
-	if not mort:	
-		move_and_slide()
+		
+	move_and_slide()
 		
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
@@ -98,3 +98,7 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 			self.set_collision_mask_value(3, false)
 			print("off")
 	print(body.name)
+	
+func _on_finish_area_entered(body: Node3D):
+	if body.is_in_group("player"):
+		get_tree().change_scene_to_file("res://scenes/niveau_2/stage_2.tscn")

@@ -8,6 +8,7 @@ func _ready() -> void:
 	
 func _toggle_death():
 	$DeathPanel.visible = true
+	get_tree().paused = true
 	score_label.text = "Dernier Score: " + str(GameData.score)
 	# Permet d'afficher la souris en mode mort
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -17,4 +18,5 @@ func _on_quit_pressed() -> void:
 	get_tree().quit()
 
 func _on_main_menu_pressed() -> void:
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://menus/main_menu/main_menu.tscn")

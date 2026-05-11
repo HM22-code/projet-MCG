@@ -54,9 +54,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	
-	if not mort:
-		move_and_slide()
-		update_animation()
+	move_and_slide()
+	update_animation()
 
 func update_animation():
 	if not is_on_floor():
