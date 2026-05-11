@@ -25,6 +25,7 @@ var wander_timer    : float = 0.0  # temps de balade
 var wander_wait     : float = 0.0  # temps d'attente
 var is_waiting      : bool  = true # commence par attendre avant de se balader
 var current_anim    : String = ""  # animation en cours
+var health: float = 40.0
 
 @onready var nav_agent : NavigationAgent3D = $NavigationAgent3D
 @onready var player: CharacterBody3D = get_tree().get_first_node_in_group("player")
@@ -204,3 +205,10 @@ func is_moving() -> bool:
 
 func _on_area_3d_body_exited(_body: Node3D) -> void:
 	self.set_collision_mask_value(3, true)
+	
+	
+
+func take_damage(amount: float) -> void:
+	health -= amount
+	if health <= 0 and state != State.DYING:
+		die()
